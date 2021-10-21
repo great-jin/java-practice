@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 打开延迟加载开关 -->
+        <setting name="lazyLoadingEnabled" value="True"/>
+        <!--将积极加载改为消息加载，即按需加载 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+    <!-- 使用扫描的形式定义别名 -->
+    <typeAliases>
+        <package name = "com.kangxg.po"/>
+    </typeAliases>
+
+    <!-- 1.配置环境，默认环境id 为 mysql -->
+    <environments default="mysql">
+        <!-- 1.2.配置id 为 mysql 的数据库环境-->
+        <environment id="mysql">
+            <!-- JDBC 事务管理-->
+            <transactionManager type="JDBC"/>
+            <!-- 数据库连接池-->
+            <dataSource type="POOLED">
+                <property name="driver"  value="com.mysql.jdbc.Driver" />
+                <property name="url"  value="jdbc:mysql://localhost:3306/demo2" />
+                <property name="username" value="root" />
+                <property name="password" value="root" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 2.配置Mapper的位置-->
+    <mappers>
+        <mapper resource="com/kangxg/mapper/UserMapper.xml"/>
+    </mappers>
+</configuration>
