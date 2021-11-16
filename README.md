@@ -1,2 +1,2 @@
-# Java-Practice
-### Java初级简易练手实验项目。
+## Java-Practice
+#### Java初级练手实验。
