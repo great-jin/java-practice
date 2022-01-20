@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="lib5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JDBC-Demo/web/WEB-INF/lib/spring-beans-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JDBC-Demo/web/WEB-INF/lib/spring-context-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JDBC-Demo/web/WEB-INF/lib/mysql-connector-java-5.1.47.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JDBC-Demo/web/WEB-INF/lib/spring-tx-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JDBC-Demo/web/WEB-INF/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JDBC-Demo/web/WEB-INF/lib/spring-aop-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JDBC-Demo/web/WEB-INF/lib/spring-jdbc-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JDBC-Demo/web/WEB-INF/lib/spring-expression-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JDBC-Demo/web/WEB-INF/lib/spring-core-4.3.6.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
