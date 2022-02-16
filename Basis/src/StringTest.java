@@ -6,16 +6,13 @@ public class StringTest {
         StringBuilderDemo();
 
         BigDecimalDemo();
-
-        // hashCode：对象散列值计算
-        String str = "hello";
-        StringBuilder strBuilder = new StringBuilder("hello");
-        System.out.println(str.hashCode() + "__" + strBuilder.hashCode());
     }
 
+    /**
+     * StringBuilder提供一种可变的字符串类型
+     * 速度快但不安全，适合单线程
+     */
     private static void StringBuilderDemo(){
-        // 异步，速度快但不安全，适合单线程
-        // StringBuilder提供一种可变的字符串类型
         StringBuilder builder = new StringBuilder();
         builder.append("Hello");
         builder.append("World!");
@@ -28,17 +25,39 @@ public class StringTest {
         System.out.println(finalString);
     }
 
+    /**
+     * 处理任意长度的数字序列长度
+     */
     private static void BigDecimalDemo(){
-        // 可以处理任意长度的数字序列长度
-        BigInteger big_1 = BigInteger.valueOf(100);
-        BigInteger big_2 = BigInteger.valueOf(100);
-        BigInteger a = big_1.add(big_2);
-        System.out.println(a);
+        BigInteger one = BigInteger.valueOf(20);
+        BigInteger two = BigInteger.valueOf(10);
 
-        // 对象包装，将一般类型封装为对象，实现可实例化。
-        // int i = null; 语句非法
+        System.out.println(one.add(two));
+        System.out.println(one.subtract(two));
+        System.out.println(one.multiply(two));
+        System.out.println(one.divide(two));
+    }
+
+    /**
+     * 对象包装，将一般类型封装为对象，实现可实例化。
+     */
+    private static void Seal(){
         int i = 0;
+        // int i = null;           // 非法语句
+
         Integer integer_1 = null;
         Integer integer_2 = new Integer(1);
+    }
+
+
+    /**
+     * hashCode()：对象散列值计算
+     */
+    private static void HashFun(){
+        String str = "hello";
+        StringBuilder builder = new StringBuilder("hello");
+
+        System.out.println("str" + str.hashCode());
+        System.out.println("builder" + builder.hashCode());
     }
 }

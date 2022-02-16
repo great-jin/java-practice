@@ -15,17 +15,21 @@ public class DateTest {
         }
     }
 
+    /**
+     * 格式化时间
+     */
     private static void DateFormatDemo(){
-        // 格式化时间
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String date = sdf.format(new Date());
+
         System.out.println(date);
     }
 
     private static void TimestampDemo(){
-        Timestamp timestamp_1 = Timestamp.valueOf("1970-01-01 00:00:001");
-        Timestamp timestamp_2 = Timestamp.from(new Date().toInstant());
-        System.out.println(timestamp_1);
-        System.out.println(timestamp_2);
+        Timestamp time1 = Timestamp.valueOf("1970-01-01 00:00:001");
+        Timestamp time2 = Timestamp.from(new Date().toInstant());
+
+        System.out.println(time1);
+        System.out.println(time2);
     }
 }
