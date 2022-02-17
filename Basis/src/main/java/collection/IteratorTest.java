@@ -1,19 +1,17 @@
 package collection;
 
+import org.junit.Test;
 import java.util.*;
 
 public class IteratorTest {
-    public static void main(String[] args) {
-        IterateDemo();
 
-        ListIterateDemo();
-    }
-
-    private static void IterateDemo() {
+    @Test
+    public void IterateDemo() {
         List<String> list = new ArrayList<>();
         list.add("hello");
+        list.add(" ");
         list.add("world");
-        list.add("!!!!!");
+        list.add("!");
         System.out.println(list);
 
         // 利用迭代器遍历集合
@@ -28,11 +26,13 @@ public class IteratorTest {
         }
     }
 
-    private static void ListIterateDemo() {
+    @Test
+    public void ListIterateDemo() {
         List<String> list = new ArrayList<>();
         list.add("hello");
+        list.add(" ");
         list.add("world");
-        list.add("!!!!!");
+        list.add("!");
         System.out.println(list);
 
         ListIterator iter = list.listIterator();

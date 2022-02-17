@@ -1,20 +1,16 @@
 package collection;
 
+import cn.hutool.json.JSONObject;
+import org.junit.Test;
 import java.util.*;
 
 public class SetTest {
-    public static void main(String[] args) {
-        HashSetDemo();
-
-        HashMapDemo();
-
-        HashTableDemo();
-    }
 
     /**
      * 非线程安全
      */
-    private static void HashSetDemo(){
+    @Test
+    public void HashSetDemo(){
         Set<String> set = new HashSet<String>();
         set.add("Alex");
         set.add("Bob");
@@ -27,7 +23,8 @@ public class SetTest {
     /**
      * 键值对形式，非线程安全
      */
-    private static void HashMapDemo(){
+    @Test
+    public void HashMapDemo(){
         Map<Integer, String> set = new HashMap<Integer, String>();
         set.put(1, "Alex");
         set.put(2, "Bob");
@@ -39,11 +36,25 @@ public class SetTest {
     /**
      * 键值对形式，线程安全
      */
-    private static void HashTableDemo(){
-        Map<Integer, String> set = new Hashtable<Integer, String>();
-        set.put(1, "Alex");
-        set.put(2, "Bob");
-        set.remove(2);
-        System.out.println(set);
+    @Test
+    public void HashTableDemo(){
+        Map<Integer, String> map = new Hashtable<Integer, String>();
+        map.put(1, "Alex");
+        map.put(2, "Bob");
+        map.remove(2);
+        System.out.println(map);
     }
+
+    /**
+     * Map与Json格式转化
+     */
+    @Test
+    public void TransDemo(){
+        Map<Integer, String> map = new Hashtable<Integer, String>();
+        map.put(1, "Alex");
+        map.put(2, "Bob");
+
+        System.out.println(new JSONObject(map));
+    }
+
 }

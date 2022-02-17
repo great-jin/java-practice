@@ -1,14 +1,11 @@
+import org.junit.Test;
+
 import java.io.*;
 
 public class IOTest {
-    public static void main(String[] args){
-//        FileDemo();
 
-        WriteFileDemo();
-
-    }
-
-    private static void FileDemo(){
+    @Test
+    public void FileDemo(){
         // The file path: ./Files/test.csv
         File file = new File(".\\Files\\test.csv");
         if (file.isFile()) {
@@ -30,7 +27,8 @@ public class IOTest {
         }
     }
 
-    private static void WriteFileDemo(){
+    @Test
+    public void WriteFileDemo(){
         //要写入的数据
         String jsonStr = "This is a test";
         //存放位置，已存在则覆盖

@@ -1,18 +1,16 @@
+import org.junit.Test;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class StringTest {
-    public static void main(String[] args) {
-        StringBuilderDemo();
-
-        BigDecimalDemo();
-    }
-
+    
     /**
      * StringBuilder提供一种可变的字符串类型
      * 速度快但不安全，适合单线程
      */
-    private static void StringBuilderDemo(){
+    @Test
+    public void StringBuilderDemo(){
         StringBuilder builder = new StringBuilder();
         builder.append("Hello");
         builder.append("World!");
@@ -28,7 +26,8 @@ public class StringTest {
     /**
      * 处理任意长度的数字序列长度
      */
-    private static void BigDecimalDemo(){
+    @Test
+    public void BigDecimalDemo(){
         BigInteger one = BigInteger.valueOf(20);
         BigInteger two = BigInteger.valueOf(10);
 
@@ -41,7 +40,8 @@ public class StringTest {
     /**
      * 对象包装，将一般类型封装为对象，实现可实例化。
      */
-    private static void Seal(){
+    @Test
+    public void Seal(){
         int i = 0;
         // int i = null;           // 非法语句
 
@@ -53,7 +53,8 @@ public class StringTest {
     /**
      * hashCode()：对象散列值计算
      */
-    private static void HashFun(){
+    @Test
+    public void HashFun(){
         String str = "hello";
         StringBuilder builder = new StringBuilder("hello");
 

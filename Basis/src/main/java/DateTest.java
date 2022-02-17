@@ -1,14 +1,16 @@
+import org.junit.Test;
+
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateTest {
-    public static void main(String []args) {
-        DateFormatDemo();
 
-        TimestampDemo();
-
-        // a instanceof B: 判断a是否为b的实例, 返回Boolean
+    /**
+     * a instanceof B: 判断a是否为b的实例, 返回Boolean
+     */
+    @Test
+    public void Demo() {
         Date timDate = new Date();
         if(timDate instanceof Date){
             System.out.println(timDate);
@@ -18,14 +20,16 @@ public class DateTest {
     /**
      * 格式化时间
      */
-    private static void DateFormatDemo(){
+    @Test
+    public void DateFormatDemo(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String date = sdf.format(new Date());
 
         System.out.println(date);
     }
 
-    private static void TimestampDemo(){
+    @Test
+    public void TimestampDemo(){
         Timestamp time1 = Timestamp.valueOf("1970-01-01 00:00:001");
         Timestamp time2 = Timestamp.from(new Date().toInstant());
 
