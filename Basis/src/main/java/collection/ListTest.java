@@ -23,7 +23,6 @@ public class ListTest {
 
         // 构造指定大小的列表
         List<String> list1 = new ArrayList<>(100);
-        System.out.println(list1);
     }
 
     /**
@@ -33,13 +32,12 @@ public class ListTest {
     public  void LinkedListDemo() {
         LinkedList<String> list = new LinkedList<>();
         list.add("hello");
+        list.add(" ");
         list.add("world");
-        list.addFirst("!!");
-        System.out.println(list);
+        list.add("!");
+        list.addFirst("Message：");
 
-        for (String str : list ) {
-            System.out.println(str);
-        }
+        System.out.println(list);
     }
 
     @Test

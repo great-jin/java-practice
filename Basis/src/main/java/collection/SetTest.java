@@ -7,16 +7,18 @@ import java.util.*;
 public class SetTest {
 
     /**
-     * 非线程安全
+     * 非线程安全, 重复不添加
      */
     @Test
     public void HashSetDemo(){
-        Set<String> set = new HashSet<String>();
+        Set<String> set = new HashSet<>();
         set.add("Alex");
         set.add("Bob");
-        set.add("Bob");     // 重复不添加
+        set.add("Bob");
+        set.add("Mark");
         set.remove("Bob");
 
+        System.out.println(set);
         System.out.println(set.contains("Alex"));
     }
 
@@ -25,12 +27,13 @@ public class SetTest {
      */
     @Test
     public void HashMapDemo(){
-        Map<Integer, String> set = new HashMap<Integer, String>();
-        set.put(1, "Alex");
-        set.put(2, "Bob");
-        set.remove(2);
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Alex");
+        map.put(2, "Bob");
+        map.put(3, "mark");
+        map.remove(2);
 
-        System.out.println(set);
+        System.out.println(map);
     }
 
     /**
@@ -38,10 +41,12 @@ public class SetTest {
      */
     @Test
     public void HashTableDemo(){
-        Map<Integer, String> map = new Hashtable<Integer, String>();
+        Map<Integer, String> map = new Hashtable<>();
         map.put(1, "Alex");
         map.put(2, "Bob");
+        map.put(3, "mark");
         map.remove(2);
+
         System.out.println(map);
     }
 
@@ -50,7 +55,7 @@ public class SetTest {
      */
     @Test
     public void TransDemo(){
-        Map<Integer, String> map = new Hashtable<Integer, String>();
+        Map<Integer, String> map = new Hashtable<>();
         map.put(1, "Alex");
         map.put(2, "Bob");
 
