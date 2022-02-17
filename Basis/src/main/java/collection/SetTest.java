@@ -50,16 +50,4 @@ public class SetTest {
         System.out.println(map);
     }
 
-    /**
-     * Map与Json格式转化
-     */
-    @Test
-    public void TransDemo(){
-        Map<Integer, String> map = new Hashtable<>();
-        map.put(1, "Alex");
-        map.put(2, "Bob");
-
-        System.out.println(new JSONObject(map));
-    }
-
 }
