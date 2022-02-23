@@ -40,6 +40,9 @@ public class ListTest {
         System.out.println(list);
     }
 
+    /**
+     * List 和 Map 嵌套使用
+     */
     @Test
     public  void Conbination() {
         List<Map<Integer, String>> list = new ArrayList<>();

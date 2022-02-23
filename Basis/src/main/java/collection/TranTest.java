@@ -15,7 +15,7 @@ public class TranTest {
      *          Set<String> set = list.stream().collect(Collectors.toSet());
      */
     @Test
-    public void lisToSetTest() {
+    public void LisToSetTest() {
         List<String> list = new ArrayList<>();
         list.add("Alex");
         list.add("Blob");

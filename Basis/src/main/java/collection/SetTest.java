@@ -1,12 +1,12 @@
 package collection;
 
-import cn.hutool.json.JSONObject;
 import org.junit.Test;
 import java.util.*;
 
 public class SetTest {
 
     /**
+     * 无序
      * 非线程安全, 重复不添加
      */
     @Test
@@ -23,31 +23,20 @@ public class SetTest {
     }
 
     /**
-     * 键值对形式，非线程安全
+     * 有序
+     * 非线程安全, 重复不添加
+     * 性能可能略低于 HashSet
      */
     @Test
-    public void HashMapDemo(){
-        Map<Integer, String> map = new HashMap<>();
-        map.put(1, "Alex");
-        map.put(2, "Bob");
-        map.put(3, "mark");
-        map.remove(2);
+    public void LinkedHashSetDemo(){
+        Set<String> set = new LinkedHashSet<>();
+        set.add("Alex");
+        set.add("Bob");
+        set.add("Bob");
+        set.add("Mark");
 
-        System.out.println(map);
-    }
-
-    /**
-     * 键值对形式，线程安全
-     */
-    @Test
-    public void HashTableDemo(){
-        Map<Integer, String> map = new Hashtable<>();
-        map.put(1, "Alex");
-        map.put(2, "Bob");
-        map.put(3, "mark");
-        map.remove(2);
-
-        System.out.println(map);
+        System.out.println(set);
+        System.out.println(set.contains("Alex"));
     }
 
 }

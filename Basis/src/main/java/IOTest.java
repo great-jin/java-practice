@@ -5,15 +5,14 @@ import java.io.*;
 public class IOTest {
 
     @Test
-    public void FileDemo(){
+    public void ReadDemo(){
         // The file path: ./Files/test.csv
-        File file = new File(".\\Files\\test.csv");
+        File file = new File("src/main/resources/user.csv");
         if (file.isFile()) {
             // put io operations in try() than you don't have to carry out "close()" function
-            // the FileInputStream or FileOutputStream only can read the byte stream, it can't read the normal date.
             try(FileInputStream fis = new FileInputStream(file)) {
                 int ch;
-                // visit to the last char return -1
+                // when visit to the last character return -1
                 // read(): read a byte than return it
                 while ((ch = fis.read()) != -1) {
                     // output one byte
@@ -28,16 +27,19 @@ public class IOTest {
     }
 
     @Test
-    public void WriteFileDemo(){
-        //要写入的数据
-        String jsonStr = "This is a test";
-        //存放位置，已存在则覆盖
-        File f = new File(".\\Files\\test.json");
-        //将数据写入.json文件
+    public void WriteDemo(){
+        // source data
+        String jsonStr = "{\"message\": \"This is a test\"}";
+
+        // the target file path, exists than replace
+        File f = new File("src/main/resources/test.js");
+
+        // write date
         try (BufferedWriter writer =
                      new BufferedWriter(new OutputStreamWriter(
                              new FileOutputStream(f,false), "UTF-8")) ) {
             writer.write(jsonStr);
+            System.out.println("write complete");
         } catch (IOException e) {
             e.printStackTrace();
         }
