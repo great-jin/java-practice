@@ -8,7 +8,7 @@ public class SetTest {
     /**
      * 无序
      * 非线程安全, 重复不添加
-     * 元素可以是null,但只能放入一个null
+     * 元素可以是 null, 但只能放入一个 null
      */
     @Test
     public void HashSetDemo(){
@@ -17,7 +17,6 @@ public class SetTest {
         set.add("Bob");
         set.add("Bob");
         set.add("Mark");
-        set.remove("Bob");
 
         System.out.println(set);
         System.out.println(set.contains("Alex"));

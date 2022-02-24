@@ -27,7 +27,7 @@ public class ListTest {
 
     /**
      * 链表，增删效率高
-     *
+     * 可以在任意位置进行高效插入删除
      */
     @Test
     public  void LinkedListDemo() {
