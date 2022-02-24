@@ -54,7 +54,7 @@ public class StringTest {
      * hashCode()：对象散列值计算
      */
     @Test
-    public void HashFun(){
+    public void HashDemo(){
         String str = "hello";
         StringBuilder builder = new StringBuilder("hello");
 

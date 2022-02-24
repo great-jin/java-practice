@@ -8,8 +8,8 @@ import org.junit.Test;
 public class ListTest {
     
     /**
-     * ArrayList是List的接口实现类。
-     * List不能直接实例化对象，List list = new List();是非法的。
+     * ArrayList 是 List 的接口实现类。
+     * List 不能直接实例化对象，List list = new List();是非法的。
      */
     @Test
     public  void ListDemo() {
@@ -27,15 +27,26 @@ public class ListTest {
 
     /**
      * 链表，增删效率高
+     *
      */
     @Test
     public  void LinkedListDemo() {
         LinkedList<String> list = new LinkedList<>();
-        list.add("hello");
-        list.add(" ");
-        list.add("world");
-        list.add("!");
-        list.addFirst("Message：");
+        list.add("Jack");
+        list.add("Mark");
+        list.add("Alex");
+
+        System.out.println(list);
+
+        // 操作头
+        list.addFirst("Great");
+        System.out.println(list.getFirst());;
+        list.removeFirst();
+
+        // 操作尾
+        list.addLast("Beth");
+        System.out.println(list.getLast());
+        list.removeLast();
 
         System.out.println(list);
     }
