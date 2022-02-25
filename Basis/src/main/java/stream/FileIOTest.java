@@ -4,12 +4,12 @@ import org.junit.Test;
 
 import java.io.*;
 
-public class IOTest {
+public class FileIOTest {
 
     @Test
-    public void ReadDemo(){
-        // The file path: ./Files/test.csv
+    public void FileInputDemo(){
         File file = new File("src/main/resources/user.csv");
+
         if (file.isFile()) {
             // put io operations in try() than you don't have to carry out "close()" function
             try(FileInputStream fis = new FileInputStream(file)) {
@@ -29,21 +29,43 @@ public class IOTest {
     }
 
     @Test
-    public void WriteDemo(){
-        // source data
+    public void FileOutputDemo(){
         String jsonStr = "{\"message\": \"This is a test\"}";
 
         // the target file path, exists than replace
-        File f = new File("src/main/resources/test.js");
+        File file = new File("src/main/resources/test.js");
 
         // write date
         try (BufferedWriter writer =
                      new BufferedWriter(new OutputStreamWriter(
-                             new FileOutputStream(f,false), "UTF-8")) ) {
+                             new FileOutputStream(file,false), "UTF-8")) ) {
             writer.write(jsonStr);
             System.out.println("write complete");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
+    /*
+    flowFile = session.write(flowFile, out -> {
+        int ch;
+        while ((ch = is.read()) != -1) {
+            out.write(ch);
+        }
+    });
+
+    session.read(flowFile, in -> {
+        try {
+            minioClient.putObject(PutObjectArgs.builder()
+                    .bucket(bucketName)
+                    .object(objectName)
+                    .stream(in, in.available(), -1)
+                    .build());
+        } catch (Exception e) {
+            throw new ProcessException(e);
+        }
+    });
+    */
+
 }
