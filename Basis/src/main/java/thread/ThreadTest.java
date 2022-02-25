@@ -1,3 +1,5 @@
+package thread;
+
 import org.junit.Test;
 
 public class ThreadTest {

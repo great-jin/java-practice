@@ -2,7 +2,6 @@ package collection;
 
 import java.util.*;
 
-import bean.User;
 import org.junit.Test;
 
 public class ListTest {
