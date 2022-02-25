@@ -25,12 +25,12 @@ public class ThreadTest {
 
 
     /**
-     * The major difference between it is if you use extend to create a thread, than you can't to extend other classes
-     * But when you user Runnable interface to create a thread, you can also to extends other class
+     * The major difference between it is if you use extend to create a thread, then you can't to extend other classes
+     * But when you use Runnable interface to create a thread, you can also to extends other class
      *
      * For example:
-     * You can use " public class Test extends AbstractTest implements Runnable {} to declare a class",
-     * But you can't use " public class Test extends Thread, OtherClass",
+     * You can use "public class Test extends AbstractTest implements Runnable {}" to declare a class,
+     * But you can't use "public class Test extends Thread, OtherClass",
      * It is illegal for extends multiple classes.
      */
 

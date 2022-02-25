@@ -17,6 +17,24 @@ public class MapTest {
         map.put(3, "Mark");
 
         System.out.println(map);
+
+        // 是否包含对应键值对
+        System.out.println(map.containsKey(2));
+        System.out.println(map.containsValue("Mark"));
+    }
+
+    /**
+     * 以插入顺序保存元素
+     * 键值对形式，异步，即非线程安全
+     */
+    @Test
+    public void LinkedHashMapDemo(){
+        Map<Integer, String> map = new LinkedHashMap<>();
+        map.put(1, "Alex");
+        map.put(2, "Bob");
+        map.put(3, "Mark");
+
+        System.out.println(map);
     }
 
     /**
@@ -34,21 +52,7 @@ public class MapTest {
     }
 
     /**
-     * 以插入顺序保存元素
-     * 键值对形式，线程安全
-     */
-    @Test
-    public void LinkedHashMapDemo(){
-        Map<Integer, String> map = new LinkedHashMap<>();
-        map.put(1, "Alex");
-        map.put(2, "Bob");
-        map.put(3, "Mark");
-
-        System.out.println(map);
-    }
-
-    /**
-     * 键值对形式，线程安全
+     * 同步，即线程安全
      */
     @Test
     public void HashTableDemo(){
@@ -56,7 +60,6 @@ public class MapTest {
         map.put(1, "Alex");
         map.put(2, "Bob");
         map.put(3, "Mark");
-        map.remove(2);
 
         System.out.println(map);
     }

@@ -6,8 +6,8 @@ import java.util.*;
 public class SetTest {
 
     /**
-     * 无序
      * 非线程安全, 重复不添加
+     * 存储根据哈希值，无先后次序
      * 元素可以是 null, 但只能放入一个 null
      */
     @Test
@@ -19,7 +19,6 @@ public class SetTest {
         set.add("Mark");
 
         System.out.println(set);
-        System.out.println(set.contains("Alex"));
     }
 
     /**
@@ -29,27 +28,26 @@ public class SetTest {
      */
     @Test
     public void LinkedHashSetDemo(){
-        Set<String> set = new LinkedHashSet<>();
+        Set<String>  set = new LinkedHashSet<>();
         set.add("Alex");
-        set.add("Bob");
         set.add("Bob");
         set.add("Mark");
 
         System.out.println(set);
-        System.out.println(set.contains("Alex"));
     }
 
     /**
-     * 集合元素处于排序状态
-     * TreeSet是SortedSet接口的唯一实现类
+     * 自带排序，集合元素处于排序状态
+     * TreeSet 是 SortedSet 接口的唯一实现类
      */
     @Test
     public void TreeSetDemo(){
-        Set set = new TreeSet();
+        Set<String>  set = new TreeSet<>();
         set.add("B");
         set.add("A");
         set.add("C");
 
         System.out.println(set);
     }
+
 }
