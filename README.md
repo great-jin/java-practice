@@ -16,5 +16,8 @@
   - MyBatis-2：一对多示例。
   - SQL Command：MyBatis相关数据表 SQL 脚本。
 
-- ## SpringMVC：
+- ## Spring MVC：
   - Spring MVC简易 Demo 示例。
+
+- ## Spring Boot：
+  - Spring Boot 学习笔记。
