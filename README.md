@@ -1,13 +1,20 @@
-#### Java初级练手实验。
+# Java练手实验
 
-- **JDBC：** JDBC代码示例。
+- ## JDBC：
+  - Java Web使用中JDBC。
 
-- **Java-Basis：** Java基础知识，包含字符串、时间戳、列表、文件读写等操作。
+- ## Basis：
+  - **Feature：** 抽象类与继承类区别。
+  - **Stream：** 输入输出流、文件读写。
+  - **Thread：** 线程与其生命周期。
+  - **JDBCTest：** 数据库连接查询示例代码。
+  - **StringTest：** 字符串、时间、封装类。
+  - **Collection：** 集合相关知识及示例代码。
 
-- **MyBatis-1：** MyBatis一对一示例。
+- ## MyBatis：
+  - MyBatis-1：一对一示例。
+  - MyBatis-2：一对多示例。
+  - SQL Command：MyBatis相关数据表 SQL 脚本。
 
-- **MyBatis-2：** MyBatis一对多示例。
-
-- **SQL Command：** MyBatis相关数据表SQL脚本。
-
-- **SpringMVC：** Spring MVC示例。
+- ## SpringMVC：
+  - Spring MVC简易 Demo 示例。
