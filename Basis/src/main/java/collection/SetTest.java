@@ -43,9 +43,9 @@ public class SetTest {
     @Test
     public void TreeSetDemo(){
         Set<String>  set = new TreeSet<>();
-        set.add("B");
-        set.add("A");
-        set.add("C");
+        set.add("Bob");
+        set.add("Alex");
+        set.add("Charlie");
 
         System.out.println(set);
     }
