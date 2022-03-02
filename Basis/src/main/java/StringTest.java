@@ -1,7 +1,9 @@
+import cn.hutool.core.util.StrUtil;
 import org.junit.Test;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class StringTest {
     
@@ -21,6 +23,26 @@ public class StringTest {
 
         final String finalString = builder.toString();
         System.out.println(finalString);
+    }
+
+    /**
+     * 根据指定字符拆分字符串为单词
+     *
+     * StrUtil.isBlank(str)：判判断字符串是否为空
+     */
+    @Test
+    public void StrDemo(){
+        String origin = "id, name";
+        Set<String> set = new LinkedHashSet();
+
+        if (!StrUtil.isBlank(origin)){
+            for (String str : origin.split(",")) {
+                set.add(str.trim());
+            }
+            System.out.println(set);
+        } else{
+            System.out.println("The original str is empty.");
+        }
     }
 
     /**
