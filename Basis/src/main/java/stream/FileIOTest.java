@@ -46,6 +46,7 @@ public class FileIOTest {
 
         try (OutputStream out = new FileOutputStream(targetFile)) {
             out.write(bs);
+
             System.out.println("write complete");
         } catch (IOException e) {
             e.printStackTrace();
@@ -61,8 +62,8 @@ public class FileIOTest {
     public void FileOutputWriteDemo(){
         try (OutputStream os = new FileOutputStream(targetFile);
              OutputStreamWriter writer = new OutputStreamWriter(os, "UTF-8");) {
-
             writer.write(message);
+
             System.out.println("write complete");
         } catch (IOException e) {
             e.printStackTrace();

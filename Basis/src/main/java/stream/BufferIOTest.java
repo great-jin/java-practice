@@ -32,13 +32,16 @@ public class BufferIOTest {
 
     /**
      * BufferedWriter
+     *
+     * Writer with caching
      */
     @Test
     public void BufferWriteDemo() {
         final String message = "This is a test.";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(targetFile)) ) {
-            writer.write(message);
+            writer.append(message);
+
             System.out.println("write complete");
         } catch (IOException e) {
             e.printStackTrace();
