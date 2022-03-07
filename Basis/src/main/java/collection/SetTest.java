@@ -14,8 +14,8 @@ public class SetTest {
     public void HashSetDemo(){
         Set<String> set = new HashSet<>();
         set.add("Alex");
-        set.add("Bob");
-        set.add("Bob");
+        set.add("Beth");
+        set.add("Beth");        // 重复不添加
         set.add("Mark");
 
         System.out.println(set);
@@ -30,7 +30,7 @@ public class SetTest {
     public void LinkedHashSetDemo(){
         Set<String>  set = new LinkedHashSet<>();
         set.add("Alex");
-        set.add("Bob");
+        set.add("Beth");
         set.add("Mark");
 
         System.out.println(set);
@@ -43,7 +43,7 @@ public class SetTest {
     @Test
     public void TreeSetDemo(){
         Set<String>  set = new TreeSet<>();
-        set.add("Bob");
+        set.add("Beth");
         set.add("Alex");
         set.add("Charlie");
 

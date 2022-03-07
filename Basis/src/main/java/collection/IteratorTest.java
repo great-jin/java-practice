@@ -8,9 +8,8 @@ public class IteratorTest {
     @Test
     public void IterateDemo() {
         List<String> list = new ArrayList<>();
-        list.add("hello");
-        list.add(" ");
-        list.add("world");
+        list.add("Hello");
+        list.add("World");
         list.add("!");
         System.out.println(list);
 
@@ -29,14 +28,15 @@ public class IteratorTest {
     @Test
     public void ListIterateDemo() {
         List<String> list = new ArrayList<>();
-        list.add("hello");
-        list.add(" ");
-        list.add("world");
+        list.add("Hello");
+        list.add("World");
         list.add("!");
         System.out.println(list);
 
         ListIterator iter = list.listIterator();
+        // 此时在 "World"
         iter.next();
+        // 返回 "World" 的前一位
         System.out.println(iter.previous());
     }
 }

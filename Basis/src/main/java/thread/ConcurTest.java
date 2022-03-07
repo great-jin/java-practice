@@ -6,9 +6,16 @@ public class ConcurTest {
 
     private int amount = 0;
 
+    class ThreadSon extends Thread{
+        @Override
+        public void run() {
+            amount ++;
+        }
+    }
+
     @Test
     public void ConcurDemo(){
-        ThreadOne thread = new ThreadOne();
+        ThreadSon thread = new ThreadSon();
         thread.start();
         System.out.println(amount);
 
@@ -21,7 +28,7 @@ public class ConcurTest {
      */
     @Test
     public void AliveDemo(){
-        ThreadOne thread = new ThreadOne();
+        ThreadSon thread = new ThreadSon();
         thread.start();
         while(thread.isAlive()) {
             System.out.println("Waiting...");
@@ -32,14 +39,6 @@ public class ConcurTest {
 
         amount++;
         System.out.println("Main: " + amount);
-    }
-
-
-    class ThreadOne extends Thread{
-        @Override
-        public void run() {
-            amount ++;
-        }
     }
 
 }

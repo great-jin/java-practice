@@ -13,8 +13,8 @@ public class MapTest {
     public void HashMapDemo(){
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "Alex");
-        map.put(2, "Bob");
-        map.put(3, "Mark");
+        map.put(2, "Mark");
+        map.put(3, "Nancy");
 
         System.out.println(map);
 
@@ -31,8 +31,8 @@ public class MapTest {
     public void LinkedHashMapDemo(){
         Map<Integer, String> map = new LinkedHashMap<>();
         map.put(1, "Alex");
-        map.put(2, "Bob");
-        map.put(3, "Mark");
+        map.put(2, "Mark");
+        map.put(3, "Nancy");
 
         System.out.println(map);
     }
@@ -44,7 +44,7 @@ public class MapTest {
     @Test
     public void TreeMapDemo(){
         Map<Integer, String> map = new TreeMap<>();
-        map.put(2, "Bob");
+        map.put(2, "Nancy");
         map.put(1, "Alex");
         map.put(3, "Mark");
 
@@ -58,8 +58,8 @@ public class MapTest {
     public void HashTableDemo(){
         Map<Integer, String> map = new Hashtable<>();
         map.put(1, "Alex");
-        map.put(2, "Bob");
-        map.put(3, "Mark");
+        map.put(2, "Mark");
+        map.put(3, "Nancy");
 
         System.out.println(map);
     }

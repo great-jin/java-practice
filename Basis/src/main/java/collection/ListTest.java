@@ -15,11 +15,10 @@ public class ListTest {
         List<String> list = new ArrayList<>();
         list.add("Jack");
         list.add("Mark");
-        list.add("Bob");
+        list.add("Beth");
 
         System.out.println(list);
         System.out.println(list.size());
-
         System.out.println(list.contains("Beth"));
     }
 
@@ -30,20 +29,19 @@ public class ListTest {
     @Test
     public  void LinkedListDemo() {
         LinkedList<String> list = new LinkedList<>();
+        list.add("Alex");
         list.add("Jack");
         list.add("Mark");
-        list.add("Alex");
-
         System.out.println(list);
 
         // 操作头
-        list.addFirst("Great");
-        System.out.println(list.getFirst());;
+        list.addFirst("Nancy");
+        System.out.println(list);
         list.removeFirst();
 
         // 操作尾
         list.addLast("Beth");
-        System.out.println(list.getLast());
+        System.out.println(list);
         list.removeLast();
 
         System.out.println(list);

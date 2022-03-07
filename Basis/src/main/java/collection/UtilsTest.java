@@ -67,7 +67,7 @@ public class UtilsTest {
     public void MapToJsonDemo(){
         Map<Integer, String> map = new Hashtable<>();
         map.put(1, "Alex");
-        map.put(2, "Bob");
+        map.put(2, "Blob");
 
         System.out.println(new JSONObject(map));
     }

@@ -9,59 +9,49 @@ public class FileIOTest {
     private final String sourcePath = "src\\main\\resources\\user.csv";
     private final String targetPath = "src\\main\\resources\\test.txt";
 
-    private final File sourceFile = new File(sourcePath);
-    private final File targetFile = new File(targetPath);
-
-    final String message = "This is a message.";
-
     /**
      * FileInputStream
      */
     @Test
-    public void FileInputDemo(){
-        if (sourceFile.isFile()) {
-            // put io operations in try() than you don't have to carry out "close()" function
-            try(InputStream is = new FileInputStream(sourceFile)) {
-                int ch;
-                // when "read()" visit to the last character return -1
-                while ((ch = is.read()) != -1) {
-                    System.out.write(ch);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+    public void FileInputDemo() throws IOException{
+        // put io declare in try() then it will automatically close when code finished.
+        try(InputStream in = new FileInputStream(sourcePath)) {
+            int ch;
+            // when "read()" visit to the last character return -1
+            while ((ch = in.read()) != -1) {
+                System.out.write(ch);
             }
-        } else {
-            System.out.println("File don't exist！");
         }
     }
 
     /**
      * FileOutputStream
      *
-     * Only write byte data.
+     * Only write byte.
      */
     @Test
-    public void FileOutputDemo(){
-        final byte[] bs = message.getBytes();
+    public void FileOutputDemo() throws IOException{
+        final String message = "This is a message from FileOutputStream.";
+        final byte[] bytes = message.getBytes();
 
-        try (OutputStream out = new FileOutputStream(targetFile)) {
-            out.write(bs);
+        try (OutputStream out = new FileOutputStream(targetPath)) {
+            out.write(bytes);
 
             System.out.println("write complete");
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
     /**
      * OutputStreamWriter
      *
-     * Can write entire string, and you can set charset.
+     * Can write entire string, and you can choose charset.
      */
     @Test
     public void FileOutputWriteDemo(){
-        try (OutputStream os = new FileOutputStream(targetFile);
-             OutputStreamWriter writer = new OutputStreamWriter(os, "UTF-8");) {
+        final String message = "This is a message from OutputStreamWriter.";
+
+        try (OutputStream out = new FileOutputStream(targetPath);
+             OutputStreamWriter writer = new OutputStreamWriter(out, "UTF-8");) {
             writer.write(message);
 
             System.out.println("write complete");

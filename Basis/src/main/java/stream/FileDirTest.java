@@ -27,6 +27,8 @@ public class FileDirTest {
         if (!sourceFile.exists()){
             sourceFile.createNewFile();
             System.out.println("You're get into new file");
+        } else {
+            System.out.println("File exists.");
         }
 
         if (sourceFile.isFile()){
@@ -47,6 +49,8 @@ public class FileDirTest {
         if (!parentPath.exists()){
             parentPath.mkdirs();
             System.out.println("You're get into mkdirs");
+        } else {
+            System.out.println("Directory exists.");
         }
 
         if (parentPath.isDirectory()){
