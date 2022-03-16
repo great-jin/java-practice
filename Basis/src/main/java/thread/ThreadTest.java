@@ -5,7 +5,7 @@ import org.junit.Test;
 public class ThreadTest {
 
     /**
-     * The major difference between it is if you use extend to create a thread, then you can't to extend other classes
+     * The major difference is if you use extend to create a thread, then you can't to extend other classes
      * But when you use Runnable interface to create a thread, you can also to extends other class
      *
      * For example:
@@ -18,8 +18,7 @@ public class ThreadTest {
         ThreadExtend threadExtend = new ThreadExtend();
         threadExtend.start();
 
-        ThreadImpl threadImpl = new ThreadImpl();
-        Thread thread = new Thread(threadImpl);
+        Thread thread = new Thread(new ThreadImpl());
         thread.start();
     }
 
