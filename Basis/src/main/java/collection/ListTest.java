@@ -6,8 +6,8 @@ import org.junit.Test;
 public class ListTest {
     
     /**
-     * 实现高效的动态增减元素。
-     * ArrayList 是 List 的接口实现类。
+     * 实现高效的动态增减元素
+     * 按照存入的顺序进行存放，允许重复元素
      * List 不能直接实例化对象，List list = new List(); 是非法的。
      */
     @Test
@@ -16,10 +16,10 @@ public class ListTest {
         list.add("Jack");
         list.add("Mark");
         list.add("Beth");
+        list.add("Beth");
 
         System.out.println(list);
         System.out.println(list.size());
-        System.out.println(list.contains("Beth"));
     }
 
     /**

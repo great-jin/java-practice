@@ -15,7 +15,8 @@ public class SetTest {
         Set<String> set = new HashSet<>();
         set.add("Alex");
         set.add("Beth");
-        set.add("Beth");        // 重复不添加
+        // 重复不添加
+        set.add("Beth");
         set.add("Mark");
 
         System.out.println(set);

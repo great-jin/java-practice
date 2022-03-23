@@ -33,7 +33,7 @@ public class JDBCTest {
     public void SMDemo(){
         final String SQL = "select * from user";
 
-        try ( Connection con = DriverManager.getConnection(JDBCURL, USERNAME, PASSWORD) ) {
+        try (Connection con = DriverManager.getConnection(JDBCURL, USERNAME, PASSWORD)) {
             Statement stmt = con.createStatement();
             stmt.executeQuery(SQL);
             ResultSet result = stmt.getResultSet();
@@ -54,9 +54,8 @@ public class JDBCTest {
     public void PSDemo() {
         final String SQL = "select * from user where id=?";
 
-        try ( Connection con = DriverManager.getConnection(JDBCURL, USERNAME, PASSWORD);
-              PreparedStatement ps = con.prepareStatement(SQL); ) {
-
+        try (Connection con = DriverManager.getConnection(JDBCURL, USERNAME, PASSWORD);
+             PreparedStatement ps = con.prepareStatement(SQL)) {
             ps.setString(1,"1");
             ResultSet result = ps.executeQuery();
 

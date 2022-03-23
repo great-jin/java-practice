@@ -37,4 +37,12 @@ public class DateTest {
         System.out.println(time1);
         System.out.println(time2);
     }
+
+    @Test
+    public void TimesDemo(){
+        String date = new SimpleDateFormat("yyyy-MM-dd hh:mm:sss").format(new Date());
+        Timestamp time2 = Timestamp.valueOf(date);
+
+        System.out.println(time2);
+    }
 }

@@ -2,7 +2,6 @@ package collection;
 
 import java.util.*;
 import org.junit.Test;
-import java.util.stream.Collectors;
 import cn.hutool.json.JSONObject;
 import cn.hutool.core.collection.CollectionUtil;
 
@@ -26,24 +25,7 @@ public class UtilsTest {
     }
 
     /**
-     * List 和 Map 嵌套使用
-     */
-    @Test
-    public  void Conbination() {
-        List<Map<Integer, String>> list = new ArrayList<>();
-        Map<Integer, String> set = new HashMap<Integer, String>();
-        set.put(1, "Alex");
-        set.put(2, "Bob");
-        list.add(set);
-
-        System.out.println(list);
-    }
-
-    /**
      * List转Set，从而实现去重
-     * 两种方案：
-     *          Set<String> set = new HashSet<>(list);
-     *          Set<String> set = list.stream().collect(Collectors.toSet());
      */
     @Test
     public void ListToSetDemo() {
@@ -55,9 +37,21 @@ public class UtilsTest {
 
         Set<String> set = new HashSet<>(list);
         System.out.println(set);
+    }
 
-        Set<String> set2 = list.stream().collect(Collectors.toSet());
-        System.out.println(set2);
+    /**
+     * 求出 Map 中 Key 最大值
+     */
+    @Test
+    public void getMaxKey() {
+        Map<Integer, String> testMaps = new HashMap<>();
+        testMaps.put(1, "Alex");
+        testMaps.put(2, "Bob");
+        testMaps.put(3, "Beth");
+        // 获取所有 Key 值
+        Set<Integer> keySet = testMaps.keySet();
+
+        System.out.println(Collections.max(keySet));
     }
 
     /**

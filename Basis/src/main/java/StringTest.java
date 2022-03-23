@@ -1,6 +1,5 @@
 import cn.hutool.core.util.StrUtil;
 import org.junit.Test;
-
 import java.math.BigInteger;
 import java.util.LinkedHashSet;
 import java.util.Set;

@@ -8,6 +8,7 @@ public class MapTest {
 
     /**
      * 键值对形式，非线程安全
+     * 元素不重复，若存入元素 Key 相同进行替换
      */
     @Test
     public void HashMapDemo(){
@@ -15,7 +16,8 @@ public class MapTest {
         map.put(1, "Alex");
         map.put(2, "Mark");
         map.put(3, "Nancy");
-
+        // 替换重复 Key 值
+        map.put(3, "Beth");
         System.out.println(map);
 
         // 是否包含对应键值对
@@ -63,4 +65,5 @@ public class MapTest {
 
         System.out.println(map);
     }
+
 }

@@ -29,21 +29,19 @@ public class LifeCircleTest  {
     }
 
     /**
-     * set infinite thread task be daemon, when none daemon thread finish
-     * then JVM will release, it won't cost resource waste.
+     * set none stop task in daemon, when none daemon thread finish,
+     * then JVM will auto stop daemon thread, it won't cost resource waste.
      */
     @Test
     public void DaemonDemo() {
         System.out.println("main: start.");
-
-        Thread t = new TimerThread();
-        t.setDaemon(true);
-        t.start();
+        Thread thread = new TimerThread();
+        thread.setDaemon(true);
+        thread.start();
 
         try {
             Thread.sleep(3000);
-        } catch (InterruptedException e) {
-        }
+        } catch (InterruptedException e) { }
 
         System.out.println("main: end.");
     }
@@ -59,9 +57,10 @@ public class LifeCircleTest  {
         @Override
         public void run()  {
             while(true) {
+                // 每隔 1 秒打印一次时间
                 System.out.println(LocalTime.now());
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     break;
                 }
