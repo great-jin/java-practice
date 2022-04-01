@@ -1,4 +1,4 @@
-package thread;
+package thread.basis;
 
 import org.junit.Test;
 
@@ -6,15 +6,15 @@ public class ConcurTest {
 
     private int amount = 0;
 
-    class ThreadSon extends Thread{
+    class ThreadSon extends Thread {
         @Override
         public void run() {
-            amount ++;
+            amount++;
         }
     }
 
     @Test
-    public void ConcurDemo(){
+    public void ConcurDemo() {
         ThreadSon thread = new ThreadSon();
         thread.start();
         System.out.println("After thread start: " + amount);
@@ -33,11 +33,11 @@ public class ConcurTest {
      * User "isAlive()" to avoid concurrent issue
      */
     @Test
-    public void AliveDemo(){
+    public void AliveDemo() {
         ThreadSon thread = new ThreadSon();
         thread.start();
         // Only when thread stop can stop the loop.
-        while(thread.isAlive()) {
+        while (thread.isAlive()) {
             System.out.println("Waiting thread over ···");
         }
         System.out.println("After thread：" + amount);
@@ -50,7 +50,7 @@ public class ConcurTest {
      * Join: will wait for the thread activity stop then carry out next command
      */
     @Test
-    public void JoinDemo(){
+    public void JoinDemo() {
         Thread thread = new ThreadSon();
         thread.start();
         try {

@@ -1,9 +1,10 @@
-package thread;
+package thread.basis;
 
 import org.junit.Test;
+
 import java.time.LocalTime;
 
-public class LifeCircleTest  {
+public class LifeCircleTest {
 
     /**
      * New：新创建的线程，尚未执行；
@@ -41,22 +42,23 @@ public class LifeCircleTest  {
 
         try {
             Thread.sleep(3000);
-        } catch (InterruptedException e) { }
+        } catch (InterruptedException e) {
+        }
 
         System.out.println("main: end.");
     }
 
     class ThreadSon extends Thread {
         @Override
-        public void run()  {
+        public void run() {
             System.out.println("thread is running with " + Thread.currentThread().getName());
         }
     }
 
     class TimerThread extends Thread {
         @Override
-        public void run()  {
-            while(true) {
+        public void run() {
+            while (true) {
                 // 每隔 1 秒打印一次时间
                 System.out.println(LocalTime.now());
                 try {

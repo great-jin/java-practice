@@ -1,6 +1,7 @@
 package collection;
 
 import org.junit.Test;
+
 import java.util.*;
 
 public class SetTest {
@@ -11,7 +12,7 @@ public class SetTest {
      * 元素可以是 null, 但只能放入一个 null
      */
     @Test
-    public void HashSetDemo(){
+    public void HashSetDemo() {
         Set<String> set = new HashSet<>();
         set.add("Alex");
         set.add("Beth");
@@ -28,8 +29,8 @@ public class SetTest {
      * 性能可能略低于 HashSet
      */
     @Test
-    public void LinkedHashSetDemo(){
-        Set<String>  set = new LinkedHashSet<>();
+    public void LinkedHashSetDemo() {
+        Set<String> set = new LinkedHashSet<>();
         set.add("Alex");
         set.add("Beth");
         set.add("Mark");
@@ -42,8 +43,8 @@ public class SetTest {
      * TreeSet 是 SortedSet 接口的唯一实现类
      */
     @Test
-    public void TreeSetDemo(){
-        Set<String>  set = new TreeSet<>();
+    public void TreeSetDemo() {
+        Set<String> set = new TreeSet<>();
         set.add("Beth");
         set.add("Alex");
         set.add("Charlie");

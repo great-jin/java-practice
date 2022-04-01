@@ -1,6 +1,7 @@
 package collection;
 
 import org.junit.Test;
+
 import java.util.*;
 
 public class IteratorTest {
@@ -15,12 +16,12 @@ public class IteratorTest {
 
         // 利用迭代器遍历集合
         Iterator iter = list.iterator();
-        while (iter.hasNext()){
+        while (iter.hasNext()) {
             System.out.println(iter.next());
         }
 
         // 效果同迭代器遍历，更常用
-        for (String str : list ) {
+        for (String str : list) {
             System.out.println(str);
         }
     }

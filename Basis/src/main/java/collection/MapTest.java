@@ -11,7 +11,7 @@ public class MapTest {
      * 元素不重复，若存入元素 Key 相同进行替换
      */
     @Test
-    public void HashMapDemo(){
+    public void HashMapDemo() {
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "Alex");
         map.put(2, "Mark");
@@ -30,7 +30,7 @@ public class MapTest {
      * 键值对形式，异步，即非线程安全
      */
     @Test
-    public void LinkedHashMapDemo(){
+    public void LinkedHashMapDemo() {
         Map<Integer, String> map = new LinkedHashMap<>();
         map.put(1, "Alex");
         map.put(2, "Mark");
@@ -44,7 +44,7 @@ public class MapTest {
      * 自带排序。基于红黑树实现
      */
     @Test
-    public void TreeMapDemo(){
+    public void TreeMapDemo() {
         Map<Integer, String> map = new TreeMap<>();
         map.put(2, "Nancy");
         map.put(1, "Alex");
@@ -57,7 +57,7 @@ public class MapTest {
      * 同步，即线程安全
      */
     @Test
-    public void HashTableDemo(){
+    public void HashTableDemo() {
         Map<Integer, String> map = new Hashtable<>();
         map.put(1, "Alex");
         map.put(2, "Mark");

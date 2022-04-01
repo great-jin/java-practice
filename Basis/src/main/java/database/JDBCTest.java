@@ -21,7 +21,7 @@ public class JDBCTest {
     private List<Map<String, Object>> list = new ArrayList<>();
 
     @Before
-    public void Init(){
+    public void Init() {
         try {
             Class.forName(CLASSNAME);
         } catch (ClassNotFoundException e) {
@@ -30,7 +30,7 @@ public class JDBCTest {
     }
 
     @Test
-    public void SMDemo(){
+    public void SMDemo() {
         final String SQL = "select * from user";
 
         try (Connection con = DriverManager.getConnection(JDBCURL, USERNAME, PASSWORD)) {
@@ -38,14 +38,14 @@ public class JDBCTest {
             stmt.executeQuery(SQL);
             ResultSet result = stmt.getResultSet();
 
-            while(result.next()){
+            while (result.next()) {
                 for (int i = 1; i <= result.getMetaData().getColumnCount(); i++) {
                     map.put(result.getMetaData().getColumnName(i), result.getString(i));
                 }
                 list.add(new JSONObject(map));
             }
             System.out.println(list);
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
@@ -56,17 +56,17 @@ public class JDBCTest {
 
         try (Connection con = DriverManager.getConnection(JDBCURL, USERNAME, PASSWORD);
              PreparedStatement ps = con.prepareStatement(SQL)) {
-            ps.setString(1,"1");
+            ps.setString(1, "1");
             ResultSet result = ps.executeQuery();
 
-            while(result.next()){
+            while (result.next()) {
                 for (int i = 1; i <= result.getMetaData().getColumnCount(); i++) {
                     map.put(result.getMetaData().getColumnName(i), result.getString(i));
                 }
                 list.add(new JSONObject(map));
             }
             System.out.println(map);
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }

@@ -1,17 +1,21 @@
-import cn.hutool.core.util.StrUtil;
+package basis;
+
 import org.junit.Test;
+
+import java.util.Set;
 import java.math.BigInteger;
 import java.util.LinkedHashSet;
-import java.util.Set;
+
+import cn.hutool.core.util.StrUtil;
 
 public class StringTest {
-    
+
     /**
      * StringBuilder提供一种可变的字符串类型
      * 速度快但不安全，适合单线程
      */
     @Test
-    public void StringBuilderDemo(){
+    public void StringBuilderDemo() {
         StringBuilder builder = new StringBuilder();
         builder.append("Hello");
         builder.append("World!");
@@ -26,20 +30,20 @@ public class StringTest {
 
     /**
      * 根据指定字符拆分字符串为单词
-     *
+     * <p>
      * StrUtil.isBlank(str)：判判断字符串是否为空
      */
     @Test
-    public void StrDemo(){
+    public void StrDemo() {
         String origin = "id, name";
         Set<String> set = new LinkedHashSet();
 
-        if (!StrUtil.isBlank(origin)){
+        if (!StrUtil.isBlank(origin)) {
             for (String str : origin.split(",")) {
                 set.add(str.trim());
             }
             System.out.println(set);
-        } else{
+        } else {
             System.out.println("The original str is empty.");
         }
     }
@@ -48,7 +52,7 @@ public class StringTest {
      * 处理任意长度的数字序列长度
      */
     @Test
-    public void BigDecimalDemo(){
+    public void BigDecimalDemo() {
         BigInteger one = BigInteger.valueOf(20);
         BigInteger two = BigInteger.valueOf(10);
 
@@ -62,12 +66,14 @@ public class StringTest {
      * 对象包装，将一般类型封装为对象，实现可实例化。
      */
     @Test
-    public void Seal(){
+    public void Seal() {
         int i = 0;
         // int i = null;           // 非法语句
 
         Integer integer_1 = null;
-        Integer integer_2 = new Integer(1);
+        Integer integer_2 = 1;
+        System.out.println(integer_1);
+        System.out.println(integer_2);
     }
 
 
@@ -75,7 +81,7 @@ public class StringTest {
      * hashCode()：对象散列值计算
      */
     @Test
-    public void HashDemo(){
+    public void HashDemo() {
         String str = "hello";
         StringBuilder builder = new StringBuilder("hello");
 

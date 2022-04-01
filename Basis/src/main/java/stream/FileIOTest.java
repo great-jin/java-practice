@@ -13,9 +13,9 @@ public class FileIOTest {
      * FileInputStream
      */
     @Test
-    public void FileInputDemo() throws IOException{
+    public void FileInputDemo() throws IOException {
         // put io declare in try() then it will automatically close when code finished.
-        try(InputStream in = new FileInputStream(sourcePath)) {
+        try (InputStream in = new FileInputStream(sourcePath)) {
             int ch;
             // when "read()" visit to the last character return -1
             while ((ch = in.read()) != -1) {
@@ -26,11 +26,11 @@ public class FileIOTest {
 
     /**
      * FileOutputStream
-     *
+     * <p>
      * Only write byte.
      */
     @Test
-    public void FileOutputDemo() throws IOException{
+    public void FileOutputDemo() throws IOException {
         final String message = "This is a message from FileOutputStream.";
         final byte[] bytes = message.getBytes();
 
@@ -43,11 +43,11 @@ public class FileIOTest {
 
     /**
      * OutputStreamWriter
-     *
+     * <p>
      * Can write entire string, and you can choose charset.
      */
     @Test
-    public void FileOutputWriteDemo(){
+    public void FileOutputWriteDemo() {
         final String message = "This is a message from OutputStreamWriter.";
 
         try (OutputStream out = new FileOutputStream(targetPath);

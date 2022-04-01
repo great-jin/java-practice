@@ -1,6 +1,7 @@
 package stream;
 
 import org.junit.Test;
+
 import java.io.*;
 
 public class BufferIOTest {
@@ -15,9 +16,9 @@ public class BufferIOTest {
      * BufferedReader
      */
     @Test
-    public void BufferReadDemo(){
+    public void BufferReadDemo() {
         if (sourceFile.isFile()) {
-            try(BufferedReader reader = new BufferedReader(new FileReader(sourceFile))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(sourceFile))) {
                 int ch;
                 while ((ch = reader.read()) != -1) {
                     System.out.write(ch);
@@ -32,14 +33,14 @@ public class BufferIOTest {
 
     /**
      * BufferedWriter
-     *
+     * <p>
      * Writer with caching
      */
     @Test
     public void BufferWriteDemo() {
         final String message = "This is a test.";
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(targetFile)) ) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(targetFile))) {
             writer.append(message);
 
             System.out.println("write complete");

@@ -1,6 +1,7 @@
 package collection;
 
 import java.util.*;
+
 import org.junit.Test;
 import cn.hutool.json.JSONObject;
 import cn.hutool.core.collection.CollectionUtil;
@@ -58,7 +59,7 @@ public class UtilsTest {
      * Map 与 Json 格式转化
      */
     @Test
-    public void MapToJsonDemo(){
+    public void MapToJsonDemo() {
         Map<Integer, String> map = new Hashtable<>();
         map.put(1, "Alex");
         map.put(2, "Blob");
@@ -70,7 +71,7 @@ public class UtilsTest {
      * 集合封装工具包
      */
     @Test
-    public void UtilsDemo(){
+    public void UtilsDemo() {
         List<String> list1 = new ArrayList<>();
         list1.add("AA");
         list1.add("AA");
@@ -83,7 +84,7 @@ public class UtilsTest {
         System.out.println("list1 distinct: " + distinct);
 
         // 是否包含元素
-        Boolean contains = CollectionUtil.contains(list1,"BB");
+        Boolean contains = CollectionUtil.contains(list1, "BB");
         System.out.println("list1 contains BB: " + contains);
 
         List<String> list2 = new ArrayList<>();

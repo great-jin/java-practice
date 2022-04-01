@@ -8,7 +8,7 @@ import java.util.Queue;
 public class QueueTest {
 
     @Test
-    public void QueueDemo(){
+    public void QueueDemo() {
         Queue<Integer> queue = new LinkedList<>();
         queue.offer(1);
         queue.offer(2);

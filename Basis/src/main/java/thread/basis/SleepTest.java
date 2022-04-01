@@ -1,4 +1,4 @@
-package thread;
+package thread.basis;
 
 import org.junit.Test;
 
@@ -23,7 +23,7 @@ public class SleepTest {
 
     /**
      * Sleep Demo
-     *
+     * <p>
      * Use sleep() can't release the lock
      * It's means if this thread in sleep, then other thread can't use it
      */
@@ -37,7 +37,7 @@ public class SleepTest {
 
     /**
      * Wait Demo
-     *
+     * <p>
      * Difference between sleep and wait is wait will release the lock.
      * It's means wait can be "woken up" by another thread calling
      */
@@ -46,9 +46,9 @@ public class SleepTest {
         Thread thread = new ThreadSecond();
         thread.start();
 
-        try  {
+        try {
             thread.wait(1000);
-        } catch (InterruptedException e)  {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -60,25 +60,25 @@ public class SleepTest {
         }
 
         @Override
-        public void run()  {
+        public void run() {
             System.out.println("thread is running with " + Thread.currentThread().getName());
         }
     }
 
     class ThreadSecond extends Thread {
         @Override
-        public void run()  {
-            synchronized (object)  {
-                amount ++;
+        public void run() {
+            synchronized (object) {
+                amount++;
                 System.out.println("amount:" + amount);
-                try  {
+                try {
                     System.out.println("Thread:" + Thread.currentThread().getName() + " come into sleep");
                     sleep(10000);
-                } catch (InterruptedException e)  {
+                } catch (InterruptedException e) {
                     // TODO: handle exception
                 }
                 System.out.println("Thread:" + Thread.currentThread().getName() + " sleep over");
-                amount ++;
+                amount++;
                 System.out.println("amount:" + amount);
             }
         }

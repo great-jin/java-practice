@@ -1,6 +1,7 @@
 package stream;
 
 import org.junit.Test;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -24,14 +25,14 @@ public class FileDirTest {
         System.out.println("File absolute path：" + absolutePath);
 
         // if file doesn't exist, then create it
-        if (!sourceFile.exists()){
+        if (!sourceFile.exists()) {
             sourceFile.createNewFile();
             System.out.println("You're get into new file");
         } else {
             System.out.println("File exists.");
         }
 
-        if (sourceFile.isFile()){
+        if (sourceFile.isFile()) {
             System.out.println("This is a file.");
         }
     }
@@ -40,20 +41,20 @@ public class FileDirTest {
      * Directory Operations
      */
     @Test
-    public void DirDemo(){
+    public void DirDemo() {
         // get file parent path
         File parentPath = sourceFile.getParentFile();
         System.out.println("Parent Path：" + parentPath);
 
         // if path doesn't exist, then create it
-        if (!parentPath.exists()){
+        if (!parentPath.exists()) {
             parentPath.mkdirs();
             System.out.println("You're get into mkdirs");
         } else {
             System.out.println("Directory exists.");
         }
 
-        if (parentPath.isDirectory()){
+        if (parentPath.isDirectory()) {
             System.out.println("This is a directory.");
         }
     }
