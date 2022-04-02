@@ -1,4 +1,4 @@
-package stream;
+package io;
 
 import org.junit.Test;
 

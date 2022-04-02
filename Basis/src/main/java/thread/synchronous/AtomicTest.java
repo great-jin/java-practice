@@ -22,9 +22,4 @@ public class AtomicTest {
         System.out.println("atomicBoolean.afterSet: " + atomicBoolean);
     }
 
-    @Test
-    public void VolatileDemo() {
-
-    }
-
 }
