@@ -2,11 +2,92 @@ package thread.pool;
 
 import org.junit.Test;
 
+import java.util.concurrent.*;
+
 public class PoolTest {
 
+    /**
+     * create thread pool with specify of number
+     */
     @Test
-    public void PoolDemo() {
+    public void FixedPoolDemo() {
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+        for (int i = 0; i < 6; i++) {
+            executor.submit(new Task("" + i));
+        }
+        executor.shutdown();
+    }
 
+    /**
+     * create thread pool that automatic with task number
+     */
+    @Test
+    public void CachedPoolDemo() {
+        ExecutorService executor = Executors.newCachedThreadPool();
+        for (int i = 0; i < 6; i++) {
+            executor.submit(new Task("" + i));
+        }
+        executor.shutdown();
+
+        /**
+         * The thread connector number between min and max
+         */
+        int min = 4;
+        int max = 10;
+        ExecutorService es = new ThreadPoolExecutor(min, max,
+                60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
+        es.shutdown();
+    }
+
+    /**
+     * create thread pool for single thread
+     */
+    @Test
+    public void SinglePoolDemo() {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        for (int i = 0; i < 6; i++) {
+            executor.submit(new Task("" + i));
+        }
+        executor.shutdown();
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void ScheduledPoolDemo() {
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(4);
+        // execute after 1 second
+        executor.schedule(new Task("one-time"), 1, TimeUnit.SECONDS);
+
+        // execute after 2 second, and repeat each 3 second
+        // last task begin and after 3 second
+        executor.scheduleAtFixedRate(new Task("fixed-rate"), 2, 3, TimeUnit.SECONDS);
+
+        // execute after 2 second, and repeat each 3 second
+        // (after last task finish and 3 second)
+        executor.scheduleWithFixedDelay(new Task("fixed-delay"), 2, 3, TimeUnit.SECONDS);
+        executor.shutdown();
     }
 
 }
+
+
+class Task implements Runnable {
+    private final String name;
+
+    public Task(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("start task " + name);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
+        System.out.println("end task " + name);
+    }
+}
+

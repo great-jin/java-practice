@@ -22,25 +22,24 @@ public class ThreadTest {
         thread.start();
     }
 
+}
 
-    /**
-     * There is two difference way create a Thread
-     * 1. Through Extends "Thread" Class and override the "run()"
-     * 2. Through implements "Runnable" Interface and override the "run()"
-     */
 
-    class ThreadExtend extends Thread {
-        @Override
-        public void run() {
-            System.out.println("Through extends \"Thread\" Class and override the \"run()\"!");
-        }
+/**
+ * There is two difference way create a Thread
+ * 1. Through Extends "Thread" Class and override the "run()"
+ * 2. Through implements "Runnable" Interface and override the "run()"
+ */
+class ThreadExtend extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Through extends \"Thread\" Class and override the \"run()\"!");
     }
+}
 
-    class ThreadImpl implements Runnable {
-        @Override
-        public void run() {
-            System.out.println("Through implements \"Runnable\" Interface and override the \"run()\"!");
-        }
+class ThreadImpl implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Through implements \"Runnable\" Interface and override the \"run()\"!");
     }
-
 }
