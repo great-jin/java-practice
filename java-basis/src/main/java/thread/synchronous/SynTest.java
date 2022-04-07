@@ -7,7 +7,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Without Lock when multiple thread use same variable, we can't know which thread was use variable
  * We don't know the code running process
- *
  */
 public class SynTest {
 
@@ -25,9 +24,9 @@ public class SynTest {
         Thread dec = new DecThread();
         add.start();
         dec.start();
+
         add.join();
         dec.join();
-
         System.out.println(SynCounter.count);
     }
 
@@ -40,9 +39,9 @@ public class SynTest {
         Thread decLock = new DecLockThread();
         addLock.start();
         decLock.start();
+
         addLock.join();
         decLock.join();
-
         System.out.println(SynCounter.countLock);
     }
 
@@ -55,9 +54,9 @@ public class SynTest {
         Thread decAtomic = new DecAtomicThread();
         addAtomic.start();
         decAtomic.start();
+
         addAtomic.join();
         decAtomic.join();
-
         System.out.println(SynCounter.countLock);
     }
 
@@ -71,6 +70,7 @@ class SynCounter {
 
     public static int count = 0;
     public static int countLock = 0;
+    public static volatile int countSyn = 0;
     public static AtomicInteger countAtomic = new AtomicInteger(0);
 }
 
@@ -79,6 +79,7 @@ class SynCounter {
  * Normal thread, it will cost variable unknowns
  */
 class AddThread extends Thread {
+    @Override
     public void run() {
         for (int i = 0; i < 1000; i++) {
             SynCounter.count += 1;
@@ -87,6 +88,7 @@ class AddThread extends Thread {
 }
 
 class DecThread extends Thread {
+    @Override
     public void run() {
         for (int i = 0; i < 1000; i++) {
             SynCounter.count -= 1;
@@ -101,6 +103,7 @@ class DecThread extends Thread {
  * Whatever code right or wrong, it's always release lock when command finish
  */
 class AddLockThread extends Thread {
+    @Override
     public void run() {
         for (int i = 0; i < 1000; i++) {
             // To get lock
@@ -113,6 +116,7 @@ class AddLockThread extends Thread {
 }
 
 class DecLockThread extends Thread {
+    @Override
     public void run() {
         for (int i = 0; i < 1000; i++) {
             synchronized (SynCounter.lock) {
@@ -131,6 +135,7 @@ class DecLockThread extends Thread {
  * When it started, and is will run to finish
  */
 class AddAtomicThread extends Thread {
+    @Override
     public void run() {
         for (int i = 0; i < 1000; i++) {
             SynCounter.countAtomic.incrementAndGet();
@@ -139,6 +144,7 @@ class AddAtomicThread extends Thread {
 }
 
 class DecAtomicThread extends Thread {
+    @Override
     public void run() {
         for (int i = 0; i < 1000; i++) {
             SynCounter.countAtomic.decrementAndGet();

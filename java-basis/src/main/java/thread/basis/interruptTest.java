@@ -34,7 +34,7 @@ public class interruptTest {
 
     @Test
     public void volatileDemo() {
-        HelloThread t = new HelloThread();
+        TagThread t = new TagThread();
         t.start();
         try {
             Thread.sleep(1);
@@ -65,20 +65,21 @@ class MyThread extends Thread {
  * In JVM, the variable was store in the main memory, when a thread want to change a variable,
  * it needed to read from main memory and change it, than it needed to write new value to memory
  * But before it to rewrite, the main memory value still no change, and other thread will get the old value
- *
+ * <p>
  * volatile make sure the variable change and rewrite to the memory immediately.
  * It means the variable is visible for multiple thread.
  */
-class HelloThread extends Thread {
+class TagThread extends Thread {
     public volatile boolean running = true;
 
     @Override
     public void run() {
         int n = 0;
         while (running) {
-            n ++;
+            n++;
             System.out.println(n + " hello!");
         }
+
         System.out.println("end!");
     }
 }
