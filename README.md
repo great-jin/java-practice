@@ -1,23 +1,23 @@
-# Java练手实验
+# Java学习笔记
 
-- ## JDBC：
+- ## web-jdbc
   - Java Web使用中JDBC。
 
-- ## Basis：
-  - **Feature：** 抽象类与继承类区别。
-  - **Stream：** 输入输出流、文件读写。
-  - **Thread：** 线程与其生命周期。
-  - **JDBCTest：** 数据库连接查询示例代码。
-  - **StringTest：** 字符串、时间、封装类。
-  - **Collection：** 集合相关知识及示例代码。
+- ## java-basis
+  - **feature：** 抽象类与继承类区别。
+  - **io：** 输入输出流、文件读写。
+  - **thread：** 线程与其生命周期。
+  - **database** 数据库连接查询示例代码。
+  - **basis：** 零杂知识合集。
+  - **collection：** 集合相关知识及示例代码。
 
 - ## MyBatis：
-  - MyBatis-1：一对一示例。
-  - MyBatis-2：一对多示例。
-  - SQL Command：MyBatis相关数据表 SQL 脚本。
+  - mybatis-1-1：一对一示例。
+  - mybatis-1-n：一对多示例。
+  - sql-script：MyBatis相关数据表 SQL 脚本。
 
-- ## Spring MVC：
+- ## spring-mvc：
   - Spring MVC简易 Demo 示例。
 
-- ## Spring Boot：
+- ## spring-note：
   - Spring Boot 学习笔记。

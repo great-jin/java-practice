@@ -38,13 +38,7 @@ public class JDBCTest {
             stmt.executeQuery(SQL);
             ResultSet result = stmt.getResultSet();
 
-            while (result.next()) {
-                for (int i = 1; i <= result.getMetaData().getColumnCount(); i++) {
-                    map.put(result.getMetaData().getColumnName(i), result.getString(i));
-                }
-                list.add(new JSONObject(map));
-            }
-            System.out.println(list);
+            PrintResultJson(result);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -59,16 +53,19 @@ public class JDBCTest {
             ps.setString(1, "1");
             ResultSet result = ps.executeQuery();
 
-            while (result.next()) {
-                for (int i = 1; i <= result.getMetaData().getColumnCount(); i++) {
-                    map.put(result.getMetaData().getColumnName(i), result.getString(i));
-                }
-                list.add(new JSONObject(map));
-            }
-            System.out.println(map);
+            PrintResultJson(result);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
+    public void PrintResultJson(ResultSet result) throws SQLException {
+        while (result.next()) {
+            for (int i = 1; i <= result.getMetaData().getColumnCount(); i++) {
+                map.put(result.getMetaData().getColumnName(i), result.getString(i));
+            }
+            list.add(new JSONObject(map));
+        }
+        System.out.println(list);
+    }
 }
