@@ -1,4 +1,4 @@
-package database;
+package basis.database;
 
 import cn.hutool.json.JSONObject;
 import org.junit.Before;

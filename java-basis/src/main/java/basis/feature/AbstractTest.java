@@ -1,4 +1,4 @@
-package feature;
+package basis.feature;
 
 public class AbstractTest {
     public static void main(String[] args) {
