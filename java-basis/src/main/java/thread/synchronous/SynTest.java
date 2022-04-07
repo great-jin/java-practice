@@ -4,12 +4,14 @@ import org.junit.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Without Lock when multiple thread use same variable, we can't know which thread was use variable
+ * We don't know the code running process
+ *
+ */
 public class SynTest {
 
     /**
-     * Without Lock when multiple thread use same variable, we can't know which thread was use variable
-     * We don't know the code running process
-     * <p>
      * The below code every time the result was difference
      * The reason is when "dec" thread running, "add" thread may not finish
      * <p>
@@ -26,7 +28,7 @@ public class SynTest {
         add.join();
         dec.join();
 
-        System.out.println(Counter.count);
+        System.out.println(SynCounter.count);
     }
 
     /**
@@ -41,7 +43,7 @@ public class SynTest {
         addLock.join();
         decLock.join();
 
-        System.out.println(Counter.countLock);
+        System.out.println(SynCounter.countLock);
     }
 
     /**
@@ -56,7 +58,7 @@ public class SynTest {
         addAtomic.join();
         decAtomic.join();
 
-        System.out.println(Counter.countLock);
+        System.out.println(SynCounter.countLock);
     }
 
 }
@@ -64,12 +66,11 @@ public class SynTest {
 /**
  * Store result
  */
-class Counter {
+class SynCounter {
     public static final Object lock = new Object();
 
     public static int count = 0;
     public static int countLock = 0;
-    public static volatile int countVolatile = 0;
     public static AtomicInteger countAtomic = new AtomicInteger(0);
 }
 
@@ -80,7 +81,7 @@ class Counter {
 class AddThread extends Thread {
     public void run() {
         for (int i = 0; i < 1000; i++) {
-            Counter.count += 1;
+            SynCounter.count += 1;
         }
     }
 }
@@ -88,7 +89,7 @@ class AddThread extends Thread {
 class DecThread extends Thread {
     public void run() {
         for (int i = 0; i < 1000; i++) {
-            Counter.count -= 1;
+            SynCounter.count -= 1;
         }
     }
 }
@@ -104,8 +105,8 @@ class AddLockThread extends Thread {
         for (int i = 0; i < 1000; i++) {
             // To get lock
             // Only when the object not been lock can run below command
-            synchronized (Counter.lock) {
-                Counter.countLock += 1;
+            synchronized (SynCounter.lock) {
+                SynCounter.countLock += 1;
             }
         }
     }
@@ -114,8 +115,8 @@ class AddLockThread extends Thread {
 class DecLockThread extends Thread {
     public void run() {
         for (int i = 0; i < 1000; i++) {
-            synchronized (Counter.lock) {
-                Counter.countLock -= 1;
+            synchronized (SynCounter.lock) {
+                SynCounter.countLock -= 1;
             }
         }
     }
@@ -132,7 +133,7 @@ class DecLockThread extends Thread {
 class AddAtomicThread extends Thread {
     public void run() {
         for (int i = 0; i < 1000; i++) {
-            Counter.countAtomic.incrementAndGet();
+            SynCounter.countAtomic.incrementAndGet();
         }
     }
 }
@@ -140,7 +141,7 @@ class AddAtomicThread extends Thread {
 class DecAtomicThread extends Thread {
     public void run() {
         for (int i = 0; i < 1000; i++) {
-            Counter.countAtomic.decrementAndGet();
+            SynCounter.countAtomic.decrementAndGet();
         }
     }
 }

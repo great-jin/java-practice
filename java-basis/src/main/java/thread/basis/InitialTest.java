@@ -2,7 +2,7 @@ package thread.basis;
 
 import org.junit.Test;
 
-public class ThreadTest {
+public class InitialTest {
 
     /**
      * The major difference is if you use extend to create a thread, then you can't to extend other classes
@@ -18,7 +18,8 @@ public class ThreadTest {
         ThreadExtend threadExtend = new ThreadExtend();
         threadExtend.start();
 
-        Thread thread = new Thread(new ThreadImpl());
+        ThreadImpl myThread = new ThreadImpl();
+        Thread thread = new Thread(myThread);
         thread.start();
     }
 

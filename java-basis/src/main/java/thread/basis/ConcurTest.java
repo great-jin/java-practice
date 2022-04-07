@@ -15,7 +15,7 @@ public class ConcurTest {
 
     @Test
     public void ConcurDemo() {
-        ThreadSon thread = new ThreadSon();
+        Thread thread = new ThreadSon();
         thread.start();
         System.out.println("After thread start: " + amount);
 
@@ -34,7 +34,7 @@ public class ConcurTest {
      */
     @Test
     public void AliveDemo() {
-        ThreadSon thread = new ThreadSon();
+        Thread thread = new ThreadSon();
         thread.start();
         // Only when thread stop can stop the loop.
         while (thread.isAlive()) {
