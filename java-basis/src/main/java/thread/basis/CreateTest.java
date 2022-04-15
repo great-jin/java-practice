@@ -2,7 +2,7 @@ package thread.basis;
 
 import org.junit.Test;
 
-public class InitialTest {
+public class CreateTest {
 
     /**
      * The major difference is if you use extend to create a thread, then you can't to extend other classes
@@ -27,7 +27,8 @@ public class InitialTest {
 
 
 /**
- * There is two difference way create a Thread
+ * There is two difference way create thread
+ * <p>
  * 1. Through Extends "Thread" Class and override the "run()"
  * 2. Through implements "Runnable" Interface and override the "run()"
  */

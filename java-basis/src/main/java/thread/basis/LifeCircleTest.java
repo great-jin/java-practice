@@ -47,27 +47,27 @@ public class LifeCircleTest {
 
         System.out.println("main: end.");
     }
+}
 
-    class ThreadSon extends Thread {
-        @Override
-        public void run() {
-            System.out.println("thread is running with " + Thread.currentThread().getName());
-        }
+
+class ThreadSon extends Thread {
+    @Override
+    public void run() {
+        System.out.println("thread is running with " + Thread.currentThread().getName());
     }
+}
 
-    class TimerThread extends Thread {
-        @Override
-        public void run() {
-            while (true) {
-                // 每隔 1 秒打印一次时间
-                System.out.println(LocalTime.now());
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    break;
-                }
+class TimerThread extends Thread {
+    @Override
+    public void run() {
+        while (true) {
+            // 每隔 1 秒打印一次时间
+            System.out.println(LocalTime.now());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                break;
             }
         }
     }
-
 }
