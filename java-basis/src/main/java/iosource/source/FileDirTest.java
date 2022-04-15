@@ -1,4 +1,4 @@
-package ioSource.source;
+package iosource.source;
 
 import org.junit.Test;
 

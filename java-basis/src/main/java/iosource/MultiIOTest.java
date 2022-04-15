@@ -1,4 +1,4 @@
-package ioSource;
+package iosource;
 
 import org.junit.Test;
 import org.springframework.web.multipart.MultipartFile;

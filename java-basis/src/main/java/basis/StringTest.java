@@ -2,6 +2,8 @@ package basis;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.math.BigInteger;
 import java.util.LinkedHashSet;
@@ -9,6 +11,39 @@ import java.util.LinkedHashSet;
 import cn.hutool.core.util.StrUtil;
 
 public class StringTest {
+
+    @Test
+    public void ForDemo() {
+        List<String> list = new ArrayList<>();
+        list.add("aaa");
+        list.add("bbb");
+        list.add("ccc");
+        list.add("ddd");
+
+        list.forEach(item -> {
+            System.out.println(item);
+        });
+    }
+
+    /**
+     * 根据指定字符拆分字符串为单词
+     * <p>
+     * StrUtil.isBlank(str)：判判断字符串是否为空
+     */
+    @Test
+    public void StringDemo() {
+        String origin = "id, name";
+        Set<String> set = new LinkedHashSet();
+
+        if (!StrUtil.isBlank(origin)) {
+            for (String str : origin.split(",")) {
+                set.add(str.trim());
+            }
+            System.out.println(set);
+        } else {
+            System.out.println("The original str is empty.");
+        }
+    }
 
     /**
      * StringBuilder提供一种可变的字符串类型
@@ -26,26 +61,6 @@ public class StringTest {
 
         final String finalString = builder.toString();
         System.out.println(finalString);
-    }
-
-    /**
-     * 根据指定字符拆分字符串为单词
-     * <p>
-     * StrUtil.isBlank(str)：判判断字符串是否为空
-     */
-    @Test
-    public void StrDemo() {
-        String origin = "id, name";
-        Set<String> set = new LinkedHashSet();
-
-        if (!StrUtil.isBlank(origin)) {
-            for (String str : origin.split(",")) {
-                set.add(str.trim());
-            }
-            System.out.println(set);
-        } else {
-            System.out.println("The original str is empty.");
-        }
     }
 
     /**
