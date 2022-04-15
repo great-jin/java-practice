@@ -1,4 +1,4 @@
-package basis.io.source;
+package ioSource.source;
 
 import org.junit.Test;
 import java.io.File;
