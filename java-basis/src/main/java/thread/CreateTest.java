@@ -15,7 +15,7 @@ public class CreateTest {
         new Thread(() -> {
             // do somethings
 
-            System.out.println("Hello!");
+            System.out.println("task demo!");
         }).start();
     }
 
@@ -60,15 +60,14 @@ public class CreateTest {
      */
     @Test
     public void CallDemo() {
-        TimeCall thread = new TimeCall();
+        TimeCall1 thread = new TimeCall1();
         try {
             System.out.println(thread.call());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-
-        CallTest thread2 = new CallTest();
+        TimeCall2 thread2 = new TimeCall2();
         try {
             System.out.println(thread2.call());
         } catch (Exception e) {
@@ -105,19 +104,24 @@ class ThreadImpl implements Runnable {
 
 /**
  * 3. Through implements "Callable" Interface and override the "call()"
- *
+ * <p>
  * When you need thread return variable that you can use Callable
  */
-class TimeCall implements Callable<Long> {
+class TimeCall1 implements Callable<Long> {
     @Override
-    public Long call(){
+    public Long call() {
         return System.currentTimeMillis();
     }
 }
 
-class CallTest implements Callable {
+/**
+ * You also can choose Callable not to set type
+ * <p>
+ * The effecting same with above.
+ */
+class TimeCall2 implements Callable {
     @Override
-    public Long call(){
+    public Long call() {
         return System.currentTimeMillis();
     }
 }
