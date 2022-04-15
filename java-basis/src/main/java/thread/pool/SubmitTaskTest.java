@@ -19,3 +19,12 @@ public class SubmitTaskTest {
         executor.shutdown();
     }
 }
+
+
+class Task implements Runnable {
+    public String result;
+
+    public void run() {
+        this.result = longTimeCalculation();
+    }
+}
