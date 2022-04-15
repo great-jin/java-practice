@@ -1,10 +1,10 @@
-package thread;
+package thread.basis;
 
 import org.junit.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class SynLockTest {
+public class ThreadLockTest {
 
     public static final Object lock = new Object();
 

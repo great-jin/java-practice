@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.concurrent.*;
 
-public class PoolTest {
+public class CreatePoolTest {
 
     /**
      * create thread pool with specify of number
@@ -52,7 +52,7 @@ public class PoolTest {
     }
 
     /**
-     *
+     * Create a schedule thread
      */
     @Test
     public void ScheduledPoolDemo() {

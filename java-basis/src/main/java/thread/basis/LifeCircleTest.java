@@ -2,9 +2,14 @@ package thread.basis;
 
 import org.junit.Test;
 
-import java.time.LocalTime;
-
 public class LifeCircleTest {
+
+     class MyThread extends Thread {
+        @Override
+        public void run() {
+            System.out.println("thread is running with " + Thread.currentThread().getName());
+        }
+    }
 
     /**
      * New：新创建的线程，尚未执行；
@@ -16,7 +21,7 @@ public class LifeCircleTest {
      */
     @Test
     public void LifeDemo() {
-        Thread thread = new ThreadSon();
+        Thread thread = new MyThread();
         // state is NEW
         System.out.println("State：" + thread.getState());
 
@@ -29,44 +34,61 @@ public class LifeCircleTest {
         System.out.println("Info：" + Thread.currentThread());
     }
 
+
+
+    // ======================== Demo 2 =====================================
+
+    private int amount = 0;
+
+    private Object object = new Object();
+
     /**
-     * set none stop task in daemon, when none daemon thread finish,
-     * then JVM will auto stop daemon thread, it won't cost resource waste.
+     * Sleep Demo
+     * <p>
+     * Use sleep() can't release the lock
+     * It's means if this thread in sleep, then other thread can't use it
      */
     @Test
-    public void DaemonDemo() {
-        System.out.println("main: start.");
-        Thread thread = new TimerThread();
-        thread.setDaemon(true);
+    public void SleepDemo() {
+        Thread thread1 = new ThreadSecond();
+        Thread thread2 = new ThreadSecond();
+        thread1.start();
+        thread2.start();
+    }
+
+    /**
+     * Wait Demo
+     * <p>
+     * Difference between sleep and wait is wait will release the lock.
+     * It's means wait can be "woken up" by another thread calling
+     */
+    @Test
+    public void WaitDemo() {
+        Thread thread = new ThreadSecond();
         thread.start();
 
         try {
-            Thread.sleep(3000);
+            thread.wait(1000);
         } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
-        System.out.println("main: end.");
     }
-}
 
-
-class ThreadSon extends Thread {
-    @Override
-    public void run() {
-        System.out.println("thread is running with " + Thread.currentThread().getName());
-    }
-}
-
-class TimerThread extends Thread {
-    @Override
-    public void run() {
-        while (true) {
-            // 每隔 1 秒打印一次时间
-            System.out.println(LocalTime.now());
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                break;
+    class ThreadSecond extends Thread {
+        @Override
+        public void run() {
+            synchronized (object) {
+                amount++;
+                System.out.println("amount:" + amount);
+                try {
+                    System.out.println("Thread:" + Thread.currentThread().getName() + " come into sleep");
+                    sleep(10000);
+                } catch (InterruptedException e) {
+                    // TODO: handle exception
+                }
+                System.out.println("Thread:" + Thread.currentThread().getName() + " sleep over");
+                amount++;
+                System.out.println("amount:" + amount);
             }
         }
     }
