@@ -11,5 +11,8 @@
 
     <modules>
         <module>java-basis</module>
+        <module>web-app</module>
+        <module>spring-boot</module>
+        <module>spring-cloud</module>
     </modules>
 </project>
