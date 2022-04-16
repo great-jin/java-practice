@@ -11,8 +11,5 @@
 
     <modules>
         <module>java-basis</module>
-        <module>mybatis</module>
-        <module>spring-mvc</module>
-        <module>web-jdbc</module>
     </modules>
 </project>
