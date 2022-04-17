@@ -13,5 +13,6 @@
         <module>java-basis</module>
         <module>spring-boot</module>
         <module>spring-cloud</module>
+        <module>maven-demo</module>
     </modules>
 </project>
