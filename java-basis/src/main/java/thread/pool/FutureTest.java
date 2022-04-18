@@ -9,7 +9,7 @@ public class FutureTest {
     class MyTask implements Callable {
 
         @Override
-        public String call(){
+        public String call() {
             return "1323";
         }
     }
@@ -25,10 +25,8 @@ public class FutureTest {
         // 提交任务并获得Future:
         Future<String> future = executor.submit(task);
 
-        boolean state= false;
-        boolean cancel= false;
-        String result1 = null;
-        String result2 = null;
+        String result1 = "", result2 = "";
+        boolean state = false, cancel = false;
         try {
             // judge the thread task is done or not.
             state = future.isDone();
@@ -39,13 +37,16 @@ public class FutureTest {
             result1 = future.get();
             // waiting 100 second and get result, may block
             result2 = future.get(100, TimeUnit.SECONDS);
-        } catch (InterruptedException | ExecutionException | TimeoutException e) {
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            // time need to release lock
             e.printStackTrace();
         }
 
-        System.out.println(result1);
-        System.out.println(result2);
-        System.out.println(state);
-        System.out.println(cancel);
+        System.out.println("state: " + state);
+        System.out.println("cancel: " + cancel);
+        System.out.println("result1: " + result1);
+        System.out.println("result2: " + result2);
     }
 }
