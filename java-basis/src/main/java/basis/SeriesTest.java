@@ -1,4 +1,4 @@
-package basis.fileio;
+package basis;
 
 public class SeriesTest {
 }

@@ -27,14 +27,14 @@ public class AtomicTest {
 
     @Test
     public void volatileDemo() {
-        TagThread t = new TagThread();
-        t.start();
+        VolatileThread thread = new VolatileThread();
+        thread.start();
         try {
             Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        t.running = false; // 标志位置为false
+        thread.running = false; // 标志位置为false
     }
 
 }
@@ -48,7 +48,7 @@ public class AtomicTest {
  * volatile make sure the variable change and rewrite to the memory immediately.
  * It means the variable is visible for multiple com.baidu.thread.
  */
-class TagThread extends Thread {
+class VolatileThread extends Thread {
 
     public volatile boolean running = true;
 
