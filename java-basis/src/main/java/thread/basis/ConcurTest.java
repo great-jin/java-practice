@@ -6,7 +6,7 @@ public class ConcurTest {
 
     private int amount = 0;
 
-    class ThreadSon extends Thread {
+    class MyThread extends Thread {
         @Override
         public void run() {
             amount++;
@@ -14,9 +14,10 @@ public class ConcurTest {
     }
 
     /**
-     * To detect com.baidu.thread is interrupted, if interrupt than stop running.
+     * To detect thread is interrupted,
+     * If interrupt than stop running.
      */
-    class MyThread extends Thread {
+    class MyThread1 extends Thread {
         @Override
         public void run() {
             int n = 0;
@@ -30,18 +31,18 @@ public class ConcurTest {
 
     @Test
     public void ConcurDemo() {
-        Thread thread = new ThreadSon();
+        Thread thread = new MyThread();
         thread.start();
-        System.out.println("After com.baidu.thread start: " + amount);
+        System.out.println("After thread start: " + amount);
 
         /**
-         * The amount in com.baidu.thread may not finish, but below "amount++" may run first.
+         * The amount in thread may not finish, but below "amount++" may run first.
          * In logical after below command the "amount" value suppose be "2".
          * But actually the "amount" value is "1".
          * We don't know sure value of "amount"
          */
         amount++;
-        System.out.println("After com.baidu.thread start and do add: " + amount);
+        System.out.println("After thread start and do add: " + amount);
     }
 
     /**
@@ -49,39 +50,39 @@ public class ConcurTest {
      */
     @Test
     public void AliveDemo() {
-        Thread thread = new ThreadSon();
+        Thread thread = new MyThread();
         thread.start();
-        // Only when com.baidu.thread stop can stop the loop.
+        // Only when thread stop can stop the loop.
         while (thread.isAlive()) {
-            System.out.println("Waiting com.baidu.thread over ···");
+            System.out.println("Waiting thread over ···");
         }
-        System.out.println("After com.baidu.thread：" + amount);
+        System.out.println("After thread：" + amount);
 
         amount++;
-        System.out.println("After com.baidu.thread do add：" + amount);
+        System.out.println("After thread do add：" + amount);
     }
 
     /**
-     * Join: will wait for the com.baidu.thread activity stop then carry out next command
+     * Join: will wait for the thread activity stop then carry out next command
      */
     @Test
     public void JoinDemo() {
-        Thread thread = new ThreadSon();
+        Thread thread = new MyThread();
         thread.start();
         try {
             thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("After com.baidu.thread：" + amount);
+        System.out.println("After thread：" + amount);
 
         amount++;
-        System.out.println("After com.baidu.thread do add：" + amount);
+        System.out.println("After thread do add：" + amount);
     }
 
     @Test
     public void InterruptDemo() {
-        Thread thread = new MyThread();
+        Thread thread = new MyThread1();
         thread.start();
         try {
             Thread.sleep(1); // 暂停1毫秒
@@ -90,9 +91,9 @@ public class ConcurTest {
         }
 
         /**
-         * join() will make com.baidu.thread into wait, and interrupt make com.baidu.thread quit
+         * join() will make thread into wait, and interrupt make thread quit
          * When before "join" to use "interrupt" the join() will throw exception
-         * and the com.baidu.thread will stop
+         * and the thread will stop
          */
         thread.interrupt(); // 中断t线程
         try {

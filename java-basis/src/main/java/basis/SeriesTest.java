@@ -1,4 +1,6 @@
 package basis;
 
-public class SeriesTest {
+import java.io.Serializable;
+
+public class SeriesTest implements Serializable {
 }

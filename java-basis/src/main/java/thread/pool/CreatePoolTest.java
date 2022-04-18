@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 public class CreatePoolTest {
 
     /**
-     * create com.baidu.thread pool with specify of number
+     * create thread pool with specify of number
      */
     @Test
     public void FixedPoolDemo() {
@@ -19,7 +19,7 @@ public class CreatePoolTest {
     }
 
     /**
-     * create com.baidu.thread pool that automatic with task number
+     * create thread pool that automatic with task number
      */
     @Test
     public void CachedPoolDemo() {
@@ -30,7 +30,7 @@ public class CreatePoolTest {
         executor.shutdown();
 
         /**
-         * The com.baidu.thread connector number between min and max
+         * The thread connector number between min and max
          */
         int min = 4;
         int max = 10;
@@ -40,7 +40,7 @@ public class CreatePoolTest {
     }
 
     /**
-     * create com.baidu.thread pool for single com.baidu.thread
+     * create thread pool for single thread
      */
     @Test
     public void SinglePoolDemo() {
@@ -52,7 +52,7 @@ public class CreatePoolTest {
     }
 
     /**
-     * Create a schedule com.baidu.thread
+     * Create a schedule thread
      */
     @Test
     public void ScheduledPoolDemo() {

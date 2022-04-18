@@ -1,4 +1,4 @@
-package thread.basis;
+package thread;
 
 import org.junit.Test;
 
@@ -7,7 +7,7 @@ public class LifeCircleTest {
      class MyThread extends Thread {
         @Override
         public void run() {
-            System.out.println("com.baidu.thread is running with " + Thread.currentThread().getName());
+            System.out.println("thread is running with " + Thread.currentThread().getName());
         }
     }
 
@@ -29,7 +29,7 @@ public class LifeCircleTest {
         // state is RUNNABLE
         System.out.println("State：" + thread.getState());
 
-        // return com.baidu.thread is now been calling.
+        // return thread is now been calling.
         // [ name, priority, group.name ]
         System.out.println("Info：" + Thread.currentThread());
     }
@@ -46,7 +46,7 @@ public class LifeCircleTest {
      * Sleep Demo
      * <p>
      * Use sleep() can't release the lock
-     * It's means if this com.baidu.thread in sleep, then other com.baidu.thread can't use it
+     * It's means if this thread in sleep, then other thread can't use it
      */
     @Test
     public void SleepDemo() {
@@ -60,7 +60,7 @@ public class LifeCircleTest {
      * Wait Demo
      * <p>
      * Difference between sleep and wait is wait will release the lock.
-     * It's means wait can be "woken up" by another com.baidu.thread calling
+     * It's means wait can be "woken up" by another thread calling
      */
     @Test
     public void WaitDemo() {

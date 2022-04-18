@@ -41,12 +41,12 @@ public class AtomicTest {
 
 
 /**
- * In JVM, the variable was store in the main memory, when a com.baidu.thread want to change a variable,
+ * In JVM, the variable was store in the main memory, when a thread want to change a variable,
  * it needed to read from main memory and change it, than it needed to write new value to memory
- * But before it to rewrite, the main memory value still no change, and other com.baidu.thread will get the old value
+ * But before it to rewrite, the main memory value still no change, and other thread will get the old value
  * <p>
  * volatile make sure the variable change and rewrite to the memory immediately.
- * It means the variable is visible for multiple com.baidu.thread.
+ * It means the variable is visible for multiple thread.
  */
 class VolatileThread extends Thread {
 

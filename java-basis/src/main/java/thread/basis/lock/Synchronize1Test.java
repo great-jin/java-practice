@@ -1,6 +1,6 @@
-package thread.basis;
+package thread.basis.lock;
 
-public class SynchronizeTest {
+public class Synchronize1Test {
 
     private int count = 0;
 
@@ -32,7 +32,7 @@ public class SynchronizeTest {
      * The below code have same effecting with above
      */
     public static void add_2_1(int n) {
-        synchronized (SynchronizeTest.class) {
+        synchronized (Synchronize1Test.class) {
             // do something
         }
     }
@@ -41,7 +41,7 @@ public class SynchronizeTest {
     // =========================== Demo 3 ==================================
 
     /**
-     * The lock can repeatedly get by same com.baidu.thread.
+     * The lock can repeatedly get by same thread.
      * <p>
      * When "add_5()" execute, "this" will be lock, if n<0 than "dec_5()" will get lock again.
      */
@@ -61,9 +61,9 @@ public class SynchronizeTest {
     // =========================== Demo 4 ==================================
 
     /**
-     * Although lock can be repeated get by same com.baidu.thread, but we need to record the number of time lock be get.
+     * Although lock can be repeated get by same thread, but we need to record the number of time lock be get.
      * <p>
-     * When the count be 0 we need to close com.baidu.thread
+     * When the count be 0 we need to close thread
      */
     int value;
 
