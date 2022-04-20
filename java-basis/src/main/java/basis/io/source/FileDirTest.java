@@ -1,4 +1,4 @@
-package basis.fileio.source;
+package basis.io.source;
 
 import org.junit.Test;
 

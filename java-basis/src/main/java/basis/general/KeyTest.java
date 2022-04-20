@@ -40,7 +40,7 @@ public class KeyTest {
 
 
     /**
-     * a instanceof B: 判断a是否为b的实例, 返回Boolean
+     * a instanceof B: 判断 a 是否为 b 的实例, 返回 Boolean
      */
     @Test
     public void InstanceDemo() {
