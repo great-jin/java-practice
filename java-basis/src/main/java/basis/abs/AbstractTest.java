@@ -1,4 +1,4 @@
-package basis.feature;
+package basis.abs;
 
 public class AbstractTest {
     public static void main(String[] args) {

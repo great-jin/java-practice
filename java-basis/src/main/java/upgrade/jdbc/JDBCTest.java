@@ -1,4 +1,4 @@
-package basis.jdbc;
+package upgrade.jdbc;
 
 import cn.hutool.json.JSONObject;
 import org.junit.Before;

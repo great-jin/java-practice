@@ -1,4 +1,4 @@
-package utils.sm;
+package utils;
 
 import cn.hutool.crypto.SmUtil;
 

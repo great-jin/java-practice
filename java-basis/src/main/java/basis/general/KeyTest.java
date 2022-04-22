@@ -38,7 +38,6 @@ public class KeyTest {
         System.out.println("Parameter num: " + KeyTest.staticNum);
     }
 
-
     /**
      * a instanceof B: 判断 a 是否为 b 的实例, 返回 Boolean
      */

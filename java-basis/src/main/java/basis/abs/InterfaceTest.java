@@ -1,4 +1,4 @@
-package basis.feature;
+package basis.abs;
 
 public class InterfaceTest {
     public static void main(String[] args) {

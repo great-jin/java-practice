@@ -1,4 +1,4 @@
-package utils.sm;
+package utils;
 
 import org.junit.Test;
 
@@ -24,7 +24,5 @@ public class SMTest {
         System.out.println(ORIGIN);
         System.out.println(Arrays.toString(result1));
         System.out.println(result2);
-
     }
-
 }
