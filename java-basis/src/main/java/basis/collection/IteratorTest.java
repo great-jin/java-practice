@@ -1,4 +1,4 @@
-package basis.upgrade.collection;
+package basis.collection;
 
 import org.junit.Test;
 

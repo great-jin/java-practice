@@ -1,6 +1,6 @@
 package basis.constrct.abs;
 
-public class AbstractTest {
+public class AbsTest {
 
     public static void main(String[] args) {
         AbsSon absSonTest = new AbsSon();

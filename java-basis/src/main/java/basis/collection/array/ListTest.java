@@ -1,4 +1,4 @@
-package basis.upgrade.collection.array;
+package basis.collection.array;
 
 import java.util.*;
 
