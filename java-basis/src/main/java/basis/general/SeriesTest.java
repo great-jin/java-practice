@@ -1,4 +1,4 @@
-package basis;
+package basis.general;
 
 import java.io.Serializable;
 

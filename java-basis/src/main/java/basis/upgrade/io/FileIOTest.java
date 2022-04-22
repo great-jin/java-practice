@@ -1,4 +1,4 @@
-package upgrade.io;
+package basis.upgrade.io;
 
 import org.junit.Test;
 
