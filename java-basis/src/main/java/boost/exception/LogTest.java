@@ -3,6 +3,8 @@ package boost.exception;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
+
+//import java.util.logging.Logger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,8 +21,7 @@ public class LogTest {
      *      FINER
      *      FINEST
      */
-    /*
-    @Test
+   /* @Test
     public void LogDemo() {
         Logger logger = Logger.getGlobal();
 
@@ -28,8 +29,7 @@ public class LogTest {
         logger.warning("memory is running out...");
         logger.fine("ignored.");
         logger.severe("process will be terminated...");
-    }
-    */
+    }*/
 
 
     /**
@@ -65,8 +65,10 @@ public class LogTest {
     public void Log2Demo() {
         Logger logger = LoggerFactory.getLogger(LogTest.class);
 
-        logger.info("3. start...");
-        logger.warn("3. end.");
+        logger.info("info ...");
+        logger.warn("warn ...");
+        logger.debug("error ...");
+        logger.error("error ...");
     }
 
 }
