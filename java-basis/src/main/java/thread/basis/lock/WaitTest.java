@@ -1,4 +1,4 @@
-package thread.basis;
+package thread.basis.lock;
 
 import org.junit.Test;
 
@@ -7,31 +7,29 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class WaitNotifyTest {
+public class WaitTest {
 
     @Test
     public void Demo() {
-        TaskQueue q = new TaskQueue();
-        List<Thread> ts = new ArrayList<>();
+        TaskQueue queue = new TaskQueue();
+        List<Thread> threadList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            Thread t = new Thread() {
-                public void run() {
-                    // 执行task:
-                    while (true) {
-                        String s = q.getTask();
-                        System.out.println("execute task: " + s);
-                    }
+            Thread thread = new Thread(() -> {
+                // 执行task:
+                while (true) {
+                    String s = queue.getTask();
+                    System.out.println("execute task: " + s);
                 }
-            };
-            t.start();
-            ts.add(t);
+            });
+            thread.start();
+            threadList.add(thread);
         }
         Thread add = new Thread(() -> {
             for (int i = 0; i < 10; i++) {
                 // 放入task:
                 String s = "t-" + Math.random();
                 System.out.println("add task: " + s);
-                q.addTask(s);
+                queue.addTask(s);
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
@@ -45,7 +43,7 @@ public class WaitNotifyTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        for (Thread t : ts) {
+        for (Thread t : threadList) {
             t.interrupt();
         }
     }
@@ -98,5 +96,4 @@ class TaskQueue1 {
         }
         return queue.remove();
     }
-
 }

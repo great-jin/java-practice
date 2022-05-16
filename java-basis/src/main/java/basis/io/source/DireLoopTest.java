@@ -1,4 +1,4 @@
-package basis.upgrade.io.source;
+package basis.io.source;
 
 import org.junit.Test;
 import java.io.File;

@@ -1,6 +1,6 @@
 package thread.basis.lock;
 
-public class Synchronize1Test {
+public class Syn1Test {
 
     private int count = 0;
 
@@ -32,7 +32,7 @@ public class Synchronize1Test {
      * The below code have same effecting with above
      */
     public static void add_2_1(int n) {
-        synchronized (Synchronize1Test.class) {
+        synchronized (Syn1Test.class) {
             // do something
         }
     }

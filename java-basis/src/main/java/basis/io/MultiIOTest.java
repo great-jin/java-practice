@@ -1,4 +1,4 @@
-package basis.upgrade.io;
+package basis.io;
 
 import org.junit.Test;
 import org.springframework.web.multipart.MultipartFile;

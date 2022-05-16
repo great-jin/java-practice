@@ -1,4 +1,4 @@
-package basis;
+package basis.jdk8;
 
 import org.junit.Test;
 

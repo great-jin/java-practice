@@ -65,13 +65,6 @@ public class CreateTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        TimeCall2 thread2 = new TimeCall2();
-        try {
-            System.out.println(thread2.call());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
 
@@ -127,18 +120,6 @@ class TimerThread extends Thread {
  * When you need thread return variable that you can use Callable
  */
 class TimeCall1 implements Callable<Long> {
-    @Override
-    public Long call() {
-        return System.currentTimeMillis();
-    }
-}
-
-/**
- * You also can choose Callable not to set type
- * <p>
- * The effecting same with above.
- */
-class TimeCall2 implements Callable {
     @Override
     public Long call() {
         return System.currentTimeMillis();

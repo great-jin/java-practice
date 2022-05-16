@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ThreadLockTest {
+public class LockTest {
 
     private static Lock lock = new ReentrantLock();
     private int count;

@@ -2,9 +2,14 @@ package thread.basis;
 
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class ConcurTest {
 
     private int amount = 0;
+
+    // ======================== Demo 1 ================================
 
     class MyThread extends Thread {
         @Override
@@ -12,22 +17,6 @@ public class ConcurTest {
             amount++;
         }
     }
-
-    /**
-     * To detect thread is interrupted,
-     * If interrupt than stop running.
-     */
-    class MyThread1 extends Thread {
-        @Override
-        public void run() {
-            int n = 0;
-            while (!isInterrupted()) {
-                n++;
-                System.out.println(n + " hello!");
-            }
-        }
-    }
-
 
     @Test
     public void ConcurDemo() {
@@ -80,24 +69,37 @@ public class ConcurTest {
         System.out.println("After thread do add：" + amount);
     }
 
+
+    // ======================== Demo 2 ================================
+
+    /**
+     * To detect thread is interrupted,
+     * If interrupt than stop running.
+     */
+    class MyThread1 extends Thread {
+        @Override
+        public void run() {
+            int n = 0;
+            while (!isInterrupted()) {
+                n++;
+                System.out.println(n + " hello!");
+            }
+        }
+    }
+
+    /**
+     * join() will make thread into wait, and interrupt make thread quit
+     * When before "join" to use "interrupt" the join() will throw exception
+     * and the thread will stop
+     */
     @Test
     public void InterruptDemo() {
         Thread thread = new MyThread1();
         thread.start();
-        try {
-            Thread.sleep(1); // 暂停1毫秒
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
-        /**
-         * join() will make thread into wait, and interrupt make thread quit
-         * When before "join" to use "interrupt" the join() will throw exception
-         * and the thread will stop
-         */
-        thread.interrupt(); // 中断t线程
+        thread.interrupt();             // interrupt the thread
         try {
-            thread.join(); // 等待t线程结束
+            thread.join();              // wait for thread over
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

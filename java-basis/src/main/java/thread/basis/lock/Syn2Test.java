@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Synchronize2Test {
+public class Syn2Test {
 
     public static final Object lock = new Object();
 
@@ -82,7 +82,7 @@ public class Synchronize2Test {
     class AddLockThread extends Thread {
         @Override
         public void run() {
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 100000; i++) {
                 // To get lock
                 // Only when the object not been lock can run below command
                 synchronized (lock) {
@@ -95,7 +95,7 @@ public class Synchronize2Test {
     class DecLockThread extends Thread {
         @Override
         public void run() {
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 100000; i++) {
                 synchronized (lock) {
                     countLock -= 1;
                 }
@@ -131,7 +131,7 @@ public class Synchronize2Test {
     class AddAtomicThread extends Thread {
         @Override
         public void run() {
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 100000; i++) {
                 countAtomic.incrementAndGet();
             }
         }
@@ -140,7 +140,7 @@ public class Synchronize2Test {
     class DecAtomicThread extends Thread {
         @Override
         public void run() {
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 100000; i++) {
                 countAtomic.decrementAndGet();
             }
         }
