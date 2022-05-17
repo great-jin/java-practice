@@ -66,7 +66,8 @@ public class CreatePoolTest {
 
         // execute after 2 second, and repeat each 3 second
         // (after last task finish and 3 second)
-        executor.scheduleWithFixedDelay(new Task("fixed-delay"), 2, 3, TimeUnit.SECONDS);
+        executor.scheduleWithFixedDelay(new Task("fixed-delay"),
+                2, 3, TimeUnit.SECONDS);
         executor.shutdown();
     }
 

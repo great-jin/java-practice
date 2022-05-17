@@ -6,11 +6,17 @@ import java.util.concurrent.*;
 
 public class FutureTest {
 
-    class MyTask implements Callable {
-
+    class MyTask implements Callable<String> {
         @Override
         public String call() {
-            return "1323";
+            return "message";
+        }
+    }
+
+    class MyThread extends Thread {
+        @Override
+        public void run() {
+            System.out.println("message");
         }
     }
 
@@ -20,7 +26,6 @@ public class FutureTest {
     @Test
     public void FutureDemo() {
         ExecutorService executor = Executors.newCachedThreadPool();
-        // 定义任务:
         Callable<String> task = new MyTask();
         // 提交任务并获得Future:
         Future<String> future = executor.submit(task);
@@ -31,7 +36,7 @@ public class FutureTest {
             // judge the thread task is done or not.
             state = future.isDone();
             // cancel current task
-            cancel = future.cancel(true);
+//            cancel = future.cancel(true);
 
             // may block
             result1 = future.get();
@@ -48,5 +53,20 @@ public class FutureTest {
         System.out.println("cancel: " + cancel);
         System.out.println("result1: " + result1);
         System.out.println("result2: " + result2);
+    }
+
+
+    @Test
+    public void demo() {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future future = executor.submit(new MyThread());
+        Object result = new Object();
+        try {
+            result = future.get();
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(result);
     }
 }
