@@ -1,11 +1,11 @@
-package basis.jdk8;
+package basis;
 
 import org.junit.Test;
 
 public class EnumTest {
 
     @Test
-    public  void Demo1() {
+    public void Demo1() {
         Color color = Color.Blue;
 
         System.out.println(color);
@@ -16,7 +16,7 @@ public class EnumTest {
     }
 
     @Test
-    public  void Demo2() {
+    public void Demo2() {
         Weekday day = Weekday.SUN;
 
         System.out.println(day);
@@ -28,10 +28,7 @@ public class EnumTest {
 }
 
 enum Color {
-    Red,
-    Blue,
-    White,
-    Black
+    Red, Blue, White, Black
 }
 
 enum Weekday {

@@ -41,7 +41,7 @@ public class MapTest {
 
     /**
      * 性能低于 HashMap
-     * 自带排序。基于红黑树实现
+     * 自带排序，基于红黑树实现
      */
     @Test
     public void TreeMapDemo() {

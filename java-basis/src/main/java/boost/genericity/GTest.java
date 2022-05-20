@@ -1,4 +1,4 @@
-package boost.general;
+package boost.genericity;
 
 /**
  * <T> can't be use for static method

@@ -1,4 +1,4 @@
-package basis.io;
+package basis.filesIO;
 
 import org.junit.Test;
 import org.springframework.web.multipart.MultipartFile;

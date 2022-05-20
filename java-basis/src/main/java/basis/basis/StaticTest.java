@@ -1,4 +1,4 @@
-package basis;
+package basis.basis;
 
 public class StaticTest {
 

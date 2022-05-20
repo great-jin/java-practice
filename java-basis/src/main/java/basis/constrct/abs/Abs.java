@@ -1,13 +1,22 @@
 package basis.constrct.abs;
 
 /**
- * 抽象类不能实例化
- * 方法不能包含方法体
+ * 抽象类不能实例化，方法不能包含方法体
  * 包含抽象方法的类必须为抽象类
  */
 abstract class Abs {
-
     public abstract int AddElem(int a, int b);
+
+    public void hello(){
+        System.out.println("father hello");
+    }
+
+    /**
+     * 抽象类可以包含静态块，接口则不合法
+     */
+    static{
+        System.out.println("I am static info");
+    }
 }
 
 
@@ -16,6 +25,11 @@ abstract class Abs {
  * 子类必须继承父类所以抽象方法，否则必须声明为抽象类
  */
 class AbsSon extends Abs {
+
+    @Override
+    public void hello() {
+        System.out.println("son hello");
+    }
 
     @Override
     public int AddElem(int a, int b) {

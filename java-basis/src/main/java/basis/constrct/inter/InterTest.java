@@ -5,8 +5,9 @@ public interface InterTest {
     int AddElem(int a, int b);
 
     /**
-     * "default" method you can choose realized or not
-     * If didn't implement the that will execute interface method boy content
+     * "default" method you can choose to override or not
+     * If implement class didn't  override default method,
+     * then it will cary out original content.
      */
     default void defaultMethod() {
         System.out.println("message in interface");
@@ -14,6 +15,9 @@ public interface InterTest {
 }
 
 
+/**
+ * the implement class can choose not to override "default" method.
+ */
 class InterTestImpl implements InterTest {
 
     @Override

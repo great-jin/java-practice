@@ -1,4 +1,4 @@
-package boost.general;
+package boost.genericity;
 
 import org.junit.Test;
 

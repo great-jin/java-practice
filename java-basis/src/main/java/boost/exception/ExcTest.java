@@ -2,7 +2,7 @@ package boost.exception;
 
 import org.junit.Test;
 
-public class ExceptionTest {
+public class ExcTest {
 
     /**
      * "printStackTrace()" will print the error, and carry out last code
@@ -42,5 +42,4 @@ public class ExceptionTest {
 
         System.out.println("This is will not show.");
     }
-
 }
