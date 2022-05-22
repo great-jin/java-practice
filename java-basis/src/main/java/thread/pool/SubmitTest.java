@@ -12,11 +12,7 @@ public class SubmitTest {
     @Test
     public void SubmitDemo() {
         ExecutorService executor = Executors.newCachedThreadPool();
-        int i = 0;
-        while (i < 3) {
-            executor.submit(new MyThread());
-            i++;
-        }
+        executor.submit(new MyThread());
         executor.shutdown();
     }
 }
@@ -25,6 +21,6 @@ public class SubmitTest {
 class MyThread extends Thread {
     @Override
     public void run() {
-        System.out.println("123");
+        System.out.println("task is running.");
     }
 }
