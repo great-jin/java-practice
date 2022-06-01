@@ -51,7 +51,6 @@ public class QueueTest {
     @Test
     public void DequeueDemo() {
         Deque<Integer> queue = new LinkedList<>();
-
         // insert from both side
         queue.addFirst(1);
         queue.addLast(2);

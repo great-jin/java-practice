@@ -2,6 +2,7 @@ package basis.basis;
 
 import org.junit.Test;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -32,6 +33,19 @@ public class DateTest {
 
         System.out.println(date1);
         System.out.println(date2);
+    }
+
+    /**
+     * 获取任意日期
+     */
+    @Test
+    public void AnyTime() {
+        // 获取当前时间前第 n 天时间
+        int n = 2;
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) - n);
+        Date passDay = calendar.getTime();
+        System.out.println(passDay);
     }
 
     /**

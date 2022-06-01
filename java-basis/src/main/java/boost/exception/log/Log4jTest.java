@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 public class Log4jTest {
 
     /**
+     * The Java basis log
+     *
      * Use "getClass()" the child class can also use this log variable
      */
     @Test
@@ -23,6 +25,9 @@ public class Log4jTest {
         log2.warn("2. end.");
     }
 
+    /**
+     * Log4j plugin
+     */
     @Test
     public void Log1Demo() {
         Logger logger = LoggerFactory.getLogger(Log4jTest.class);

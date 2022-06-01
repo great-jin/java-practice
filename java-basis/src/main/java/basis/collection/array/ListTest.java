@@ -2,6 +2,7 @@ package basis.collection.array;
 
 import java.util.*;
 
+import basis.collection.bean.User;
 import org.junit.Test;
 
 public class ListTest {
@@ -47,4 +48,16 @@ public class ListTest {
 
         System.out.println(list);
     }
+
+
+    @Test
+    public void SortDemo() {
+        List list = new ArrayList();
+        list.add(new User("Alex", 28));
+        list.add(new User("Beth", 14));
+        list.add(new User("Mark", 45));
+        list.sort(Comparator.comparing(User::getAge));
+    }
+
+
 }
