@@ -13,10 +13,11 @@ public class BeanTest {
          *
          * ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
          */
-        ApplicationContext context = new AnnotationConfigApplicationContext(TestConfig.class);
+        ApplicationContext context = new
+                AnnotationConfigApplicationContext(TestConfig.class);
 
         // 获取 bean
-        User user = (User) context.getBean("TestBean");
+        User user = (User) context.getBean("user");
         user.hello();
     }
 }

@@ -11,8 +11,7 @@ public class TestConfig {
     /**
      * @Bean 未指定 name 时默认值为方法名
      */
-    @Bean
-    //    @Bean(name = "user")
+    @Bean(name = "user")
     @Scope("prototype")
     public User TestBean() {
         return new User();
