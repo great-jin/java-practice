@@ -1,8 +1,7 @@
-package com.budai.bean.test;
+package com.budai.annotation.autowire;
 
+import com.budai.annotation.autowire.service.UserService;
 import org.junit.Test;
-
-import com.budai.bean.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ServiceTest {

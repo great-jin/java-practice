@@ -1,7 +1,7 @@
-package com.budai.bean.test;
+package com.budai.annotation.bean;
 
-import com.budai.bean.model.User;
-import com.budai.bean.config.TestConfig;
+import com.budai.annotation.bean.model.User;
+import com.budai.annotation.bean.config.TestConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

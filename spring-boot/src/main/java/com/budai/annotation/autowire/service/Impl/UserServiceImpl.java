@@ -1,6 +1,6 @@
-package com.budai.bean.service.Impl;
+package com.budai.annotation.autowire.service.Impl;
 
-import com.budai.bean.service.UserService;
+import com.budai.annotation.autowire.service.UserService;
 import org.springframework.stereotype.Service;
 
 @Service("userService")

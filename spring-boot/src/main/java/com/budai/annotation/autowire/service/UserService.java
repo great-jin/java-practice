@@ -1,4 +1,4 @@
-package com.budai.bean.service;
+package com.budai.annotation.autowire.service;
 
 public interface UserService {
 
