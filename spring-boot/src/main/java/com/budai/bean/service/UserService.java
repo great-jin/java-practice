@@ -1,4 +1,4 @@
-package com.budai.anno.service;
+package com.budai.bean.service;
 
 public interface UserService {
 
