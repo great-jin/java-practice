@@ -2,6 +2,9 @@ package com.budai.annotation.autowire.service;
 
 public interface UserService {
 
-    void print();
+    /**
+     * 消息打印
+     */
+    String print();
 
 }

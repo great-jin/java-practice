@@ -6,9 +6,12 @@ import org.springframework.stereotype.Service;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
+    /**
+     * 消息打印
+     */
     @Override
-    public void print() {
-        System.out.println("Hello");
+    public String print() {
+        return "userService";
     }
 
 }
