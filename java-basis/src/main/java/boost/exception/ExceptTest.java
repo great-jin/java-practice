@@ -2,7 +2,7 @@ package boost.exception;
 
 import org.junit.Test;
 
-public class ExcTest {
+public class ExceptTest {
 
     /**
      * "printStackTrace()" will print the error, and carry out last code
