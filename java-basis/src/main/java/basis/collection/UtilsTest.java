@@ -9,6 +9,33 @@ import cn.hutool.core.collection.CollectionUtil;
 public class UtilsTest {
 
     /**
+     * 遍历集合
+     */
+    @Test
+    public void IterateDemo() {
+        List<String> list = new ArrayList<>();
+        list.add("Hello");
+        list.add("World");
+
+        // 利用迭代器遍历集合
+        Iterator<String> iter = list.iterator();
+        // iter.previous()
+        while (iter.hasNext()) {
+            System.out.println(iter.next());
+        }
+
+        // 效果同迭代器遍历，更常用
+        for (String str : list) {
+            System.out.println(str);
+        }
+
+        // 使用 lambda 表达式遍历
+        list.forEach(str -> {
+            System.out.println(str);
+        });
+    }
+
+    /**
      * add() 只能单次存入一个实例
      * addALl 可以直接存入"集合"
      */
@@ -26,7 +53,7 @@ public class UtilsTest {
     }
 
     /**
-     * List转Set，从而实现去重
+     * List 转 Set，从而实现去重
      */
     @Test
     public void ListToSetDemo() {

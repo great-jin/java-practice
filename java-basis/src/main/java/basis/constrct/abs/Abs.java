@@ -13,6 +13,8 @@ abstract class Abs {
 
     /**
      * 抽象类可以包含静态块，接口则不合法
+     *
+     * 实例化类后将自动执行
      */
     static{
         System.out.println("I am static info");

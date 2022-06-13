@@ -18,6 +18,7 @@ public class ListTest {
         list.add("Jack");
         list.add("Mark");
         list.add("Beth");
+        // 允许重复元素
         list.add("Beth");
 
         System.out.println(list);
@@ -32,23 +33,18 @@ public class ListTest {
     public void LinkedListDemo() {
         LinkedList<String> list = new LinkedList<>();
         list.add("Alex");
-        list.add("Jack");
-        list.add("Mark");
         System.out.println(list);
 
         // 操作头
-        list.addFirst("Nancy");
-        System.out.println(list);
+        list.addFirst("Jack");
         list.removeFirst();
 
         // 操作尾
         list.addLast("Beth");
-        System.out.println(list);
         list.removeLast();
 
         System.out.println(list);
     }
-
 
     @Test
     public void SortDemo() {
@@ -58,6 +54,4 @@ public class ListTest {
         list.add(new User("Mark", 45));
         list.sort(Comparator.comparing(User::getAge));
     }
-
-
 }

@@ -45,7 +45,7 @@ public class StringTest {
     }
 
     /**
-     * StringBuilder提供一种可变的字符串类型
+     * StringBuilder 提供一种可变的字符串类型
      * <p>
      * Fast but unsafe, suit for sing thread
      */
@@ -53,14 +53,15 @@ public class StringTest {
     public void StringBuilderDemo() {
         StringBuilder builder = new StringBuilder();
         builder.append("Hello");
-        builder.append("World!");
+        builder.append("World");
         // insert a char at index 5
         builder.insert(5, "J");
         // replace a char at index 5
         builder.setCharAt(5, ' ');
+        // delete the char at '5'
+        builder.deleteCharAt(5);
 
-        final String finalString = builder.toString();
-        System.out.println(finalString);
+        System.out.println(builder.toString());
     }
 
 
