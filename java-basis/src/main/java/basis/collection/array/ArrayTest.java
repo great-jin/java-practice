@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ArrayTest {
 
@@ -35,12 +36,15 @@ public class ArrayTest {
     @Test
     public void ArrayToList() {
         String[] str = {"path1", "path2", "path3"};
-        List<String> list = Arrays.asList(str);
-        StringBuilder builder = new StringBuilder();
-        list.forEach(s -> {
-            builder.append(s).append(",");
-        });
-        builder.deleteCharAt(builder.length() - 1);
-        System.out.println(builder);
+        // In core the list still was array ,can't do any collection operate.
+        List<String> list1 = Arrays.asList(str);
+        // "add()" will go wrong.
+        // list.add("path4");
+        System.out.println(list1);
+
+        // cast array to list
+        List<String> list2 = Arrays.stream(str).collect(Collectors.toList());
+        list2.add("path4");
+        System.out.println(list2);
     }
 }
