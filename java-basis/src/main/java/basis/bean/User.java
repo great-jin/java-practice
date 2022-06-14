@@ -1,4 +1,4 @@
-package basis.collection.bean;
+package basis.bean;
 
 public class User {
     private String name;

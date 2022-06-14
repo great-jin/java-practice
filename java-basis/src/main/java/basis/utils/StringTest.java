@@ -24,27 +24,6 @@ public class StringTest {
     }
 
     /**
-     * 根据指定字符拆分字符串为单词
-     * <p>
-     * StrUtil.isBlank(str)：判判断字符串是否为空
-     */
-    @Test
-    public void UtilDemo() {
-        String origin = "id, name";
-        List<String> list = new ArrayList<>();
-
-        // if "origin" not be empty
-        if (!StrUtil.isBlank(origin)) {
-            for (String str : origin.split(",")) {
-                list.add(str.trim());
-            }
-        } else {
-            System.out.println("The original str is empty.");
-        }
-        System.out.println(list);
-    }
-
-    /**
      * StringBuilder 提供一种可变的字符串类型
      * <p>
      * Fast but unsafe, suit for sing thread
@@ -64,7 +43,6 @@ public class StringTest {
         System.out.println(builder.toString());
     }
 
-
     /**
      * hashCode()：对象散列值计算
      * <p>
@@ -77,5 +55,47 @@ public class StringTest {
 
         System.out.println("str: " + str.hashCode());
         System.out.println("builder: " + builder.hashCode());
+    }
+
+    /**
+     * 根据指定字符拆分字符串为单词
+     * <p>
+     * StrUtil.isBlank(str)：判判断字符串是否为空
+     */
+    @Test
+    public void SplitStr() {
+        String origin = "id, name";
+        List<String> list = new ArrayList<>();
+        // if "origin" not be empty
+        if (!StrUtil.isBlank(origin)) {
+            for (String str : origin.split(",")) {
+                list.add(str.trim());
+            }
+        } else {
+            System.out.println("The original str is empty.");
+        }
+        System.out.println(list);
+    }
+
+    /**
+     * Parse string to int
+     */
+
+    @Test
+    public void ParseToInt() {
+        String str = "123";
+        int result = Integer.parseInt(str);
+        Integer result1 = Integer.valueOf(str);
+
+        System.out.println(result);
+        System.out.println(result1 + " " + result1.getClass());
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getS());
+    }
+
+    public static String getS() {
+        return "hello";
     }
 }

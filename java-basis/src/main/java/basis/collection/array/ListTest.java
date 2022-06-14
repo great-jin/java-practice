@@ -2,7 +2,7 @@ package basis.collection.array;
 
 import java.util.*;
 
-import basis.collection.bean.User;
+import basis.bean.User;
 import org.junit.Test;
 
 public class ListTest {
