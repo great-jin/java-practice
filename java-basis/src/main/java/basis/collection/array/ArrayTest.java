@@ -1,7 +1,6 @@
 package basis.collection.array;
 
 import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.json.JSON;
 import org.junit.Test;
 
 import java.util.*;
@@ -66,7 +65,7 @@ public class ArrayTest {
         System.out.println(DiffTime(list1, list2));
     }
 
-    private static List<String> DiffTime(List<String[]> list1, List<String[]> list2) {
+    public static List<String> DiffTime(List<String[]> list1, List<String[]> list2) {
         List<String> result = new ArrayList<>();
         List<String> time1 = new ArrayList<>();
         List<String> time2 = new ArrayList<>();
@@ -82,7 +81,7 @@ public class ArrayTest {
         }
         List<String[]> list3 = new ArrayList<>();
         list1.forEach(record -> {
-            if(!result.contains(record[0])){
+            if (!result.contains(record[0])) {
                 list3.add(record);
             }
         });
