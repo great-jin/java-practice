@@ -41,13 +41,13 @@ public class MySQLTest {
      * select <filed> from <schema>.<table_name>
      * where <increase_filed> > '<specific_time>' and create_time < date_add('<specific_time>', interval + 60 MINUTE)
      */
-    public String HourRecordSQL(String keyFiled, String dateScope) {
+    public String HourRecordSQL(String primaryKeyFiled, String dateScope) {
         String tableName = "integration_account_programme";
         String schemaName = "";
         String increaseFiled = "create_time";
 
         StringBuilder builder = new StringBuilder();
-        builder.append("SELECT ").append(keyFiled).append(" FROM ");
+        builder.append("SELECT ").append(primaryKeyFiled).append(" FROM ");
         if (!StrUtil.isBlank(schemaName)) {
             builder.append(schemaName).append(".");
         }
