@@ -1,4 +1,4 @@
-package thread.basis;
+package thread.single;
 
 import org.junit.Test;
 

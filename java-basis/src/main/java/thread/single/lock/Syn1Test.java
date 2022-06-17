@@ -1,4 +1,4 @@
-package thread.basis.lock;
+package thread.single.lock;
 
 public class Syn1Test {
 

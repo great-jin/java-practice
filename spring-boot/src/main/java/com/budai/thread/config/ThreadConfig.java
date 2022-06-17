@@ -7,11 +7,12 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 
 @Configuration
+//@ConfigurationProperties(prefix = "task.pool")
 public class ThreadConfig {
 
     /**
      * 核心线程数（默认线程数）
-     * 若没设置默认为 0，在创建了线程池后，当有任务来之后，就会创建一个线程去执行任务，
+     * 若未设置默认为 0，在创建了线程池后，当提交任务后，就会创建一个线程去执行任务，
      */
     private static final int corePoolSize = 5;
 

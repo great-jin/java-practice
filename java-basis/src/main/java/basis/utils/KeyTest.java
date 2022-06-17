@@ -1,5 +1,7 @@
 package basis.utils;
 
+import basis.bean.Human;
+import basis.bean.Student;
 import org.junit.Test;
 
 import java.util.Date;
@@ -28,7 +30,7 @@ public class KeyTest {
 
     /**
      * The static method didn't have "this" key word.
-     *
+     * <p>
      * The static method want visit whole scale variable need to make variable "static"
      */
     public static void print2(int num) {
@@ -43,7 +45,13 @@ public class KeyTest {
      */
     @Test
     public void InstanceDemo() {
-        Date timDate = new Date();
-        System.out.println(timDate instanceof Date);
+        Human human = new Human();
+        Student student = new Student();
+
+        boolean b1 = human instanceof Human;
+        System.out.println(b1);
+
+        boolean b2 = student instanceof Human;
+        System.out.println(b2);
     }
 }

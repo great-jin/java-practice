@@ -16,12 +16,12 @@ public class CreateTest {
      */
     @Test
     public void DeclareDemo() {
-        Thread threadExtend = new ThreadExtend();
-        threadExtend.start();
+        Thread thread1 = new ThreadExtend();
+        thread1.start();
 
         ThreadImpl myThread = new ThreadImpl();
-        Thread thread = new Thread(myThread);
-        thread.start();
+        Thread thread2 = new Thread(myThread);
+        thread2.start();
     }
 
     /**

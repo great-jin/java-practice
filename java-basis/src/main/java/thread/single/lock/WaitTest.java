@@ -1,4 +1,4 @@
-package thread.basis.lock;
+package thread.single.lock;
 
 import org.junit.Test;
 
