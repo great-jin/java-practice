@@ -2,6 +2,7 @@ package basis.collection;
 
 import java.util.*;
 
+import basis.bean.User;
 import org.junit.Test;
 import cn.hutool.json.JSONObject;
 import cn.hutool.core.collection.CollectionUtil;
@@ -130,5 +131,18 @@ public class UtilsTest {
         // 求交集
         Collection<String> intersection = CollectionUtil.intersection(list1, list2);
         System.out.println("list1 same part list2: " + intersection);
+    }
+
+    @Test
+    public void demo1() {
+        List list = new ArrayList();
+        list.add(new User("Alex", 28));
+        list.add(new User("Beth", 14));
+        list.add(new User("Mark", 45));
+        list.sort(Comparator.comparing(User::getAge));
+
+        list.forEach(record -> {
+            System.out.println(record.toString());
+        });
     }
 }
