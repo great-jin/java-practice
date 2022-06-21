@@ -103,10 +103,8 @@ public class UtilsTest {
         list.add("Mark");
         list.add("Beth");
 
-        list.stream().sorted();
-        list.forEach(record -> {
-            System.out.println(record);
-        });
+        Collections.sort(list);
+        System.out.println(list);
     }
 
     /**
