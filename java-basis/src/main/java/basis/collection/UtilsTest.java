@@ -4,6 +4,7 @@ import java.util.*;
 
 import basis.bean.User;
 import com.google.common.collect.Lists;
+import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
 import cn.hutool.json.JSONObject;
 import com.google.common.collect.Sets;
@@ -39,20 +40,16 @@ public class UtilsTest {
     }
 
     /**
-     * add() 只能单次存入一个实例
-     * addALl 可以直接存入"集合"
+     * List 列表元素合并
      */
     @Test
-    public void AddAllDemo() {
-        List<String> list1 = new ArrayList<>();
-        list1.add("Alex");
-        list1.add("Beth");
-        System.out.println(list1);
-
-        List<String> list2 = new ArrayList<>();
-        list2.add("Mark");
-        list2.addAll(list1);
-        System.out.println(list2);
+    public void ApacheStrUtils() {
+        List<String> list = new ArrayList<>();
+        list.add("AA");
+        list.add("BB");
+        list.add("CC");
+        String result = StringUtils.join(list, ",");
+        System.out.println(result);
     }
 
     /**
@@ -75,13 +72,12 @@ public class UtilsTest {
      */
     @Test
     public void getMaxKey() {
-        Map<Integer, String> testMaps = new HashMap<>();
-        testMaps.put(1, "Alex");
-        testMaps.put(2, "Bob");
-        testMaps.put(3, "Beth");
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Alex");
+        map.put(2, "Bob");
+        map.put(3, "Beth");
         // 获取所有 Key 值
-        Set<Integer> keySet = testMaps.keySet();
-
+        Set<Integer> keySet = map.keySet();
         System.out.println(Collections.max(keySet));
     }
 
@@ -98,16 +94,33 @@ public class UtilsTest {
     }
 
     /**
+     * 列表元素排序
+     */
+    @Test
+    public void ListSort() {
+        List<String> list = new ArrayList();
+        list.add("Alex");
+        list.add("Mark");
+        list.add("Beth");
+
+        list.stream().sorted();
+        list.forEach(record -> {
+            System.out.println(record);
+        });
+    }
+
+    /**
      * 列表动态元素排序
      */
     @Test
-    public void demo1() {
-        List list = new ArrayList();
+    public void DynamicSort() {
+        List<User> list = new ArrayList();
         list.add(new User("Alex", 28));
         list.add(new User("Beth", 14));
         list.add(new User("Mark", 45));
-        list.sort(Comparator.comparing(User::getAge));
 
+        // 列表排序
+        list.sort(Comparator.comparing(User::getAge));
         list.forEach(record -> {
             System.out.println(record.toString());
         });
