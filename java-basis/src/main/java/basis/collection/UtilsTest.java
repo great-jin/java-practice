@@ -3,8 +3,10 @@ package basis.collection;
 import java.util.*;
 
 import basis.bean.User;
+import com.google.common.collect.Lists;
 import org.junit.Test;
 import cn.hutool.json.JSONObject;
+import com.google.common.collect.Sets;
 import cn.hutool.core.collection.CollectionUtil;
 
 public class UtilsTest {
@@ -96,43 +98,8 @@ public class UtilsTest {
     }
 
     /**
-     * 集合封装工具包
+     * 列表动态元素排序
      */
-    @Test
-    public void UtilsDemo() {
-        List<String> list1 = new ArrayList<>();
-        list1.add("AA");
-        list1.add("AA");
-        list1.add("BB");
-        list1.add("CC");
-        System.out.println("list1: " + list1);
-
-        // 去除重复元素
-        Collection<String> distinct = CollectionUtil.distinct(list1);
-        System.out.println("list1 distinct: " + distinct);
-
-        // 是否包含元素
-        boolean isContains = CollectionUtil.contains(list1, "BB");
-        System.out.println("list1 contains BB: " + isContains);
-
-
-        List<String> list2 = new ArrayList<>();
-        list2.add("AA");
-        list2.add("DD");
-        System.out.println("list2: " + list2);
-
-        // 去除交集
-        Collection<String> subtract = CollectionUtil.subtract(list1, list2);
-        System.out.println("list1 remove list2: " + subtract);
-        // 去除交集, 更新原集合
-        list1.removeAll(list2);
-        System.out.println(list1);
-
-        // 求交集
-        Collection<String> intersection = CollectionUtil.intersection(list1, list2);
-        System.out.println("list1 same part list2: " + intersection);
-    }
-
     @Test
     public void demo1() {
         List list = new ArrayList();

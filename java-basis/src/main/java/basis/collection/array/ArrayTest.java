@@ -66,7 +66,6 @@ public class ArrayTest {
     }
 
     public static List<String> DiffTime(List<String[]> list1, List<String[]> list2) {
-        List<String> result = new ArrayList<>();
         List<String> time1 = new ArrayList<>();
         List<String> time2 = new ArrayList<>();
         list1.forEach(record -> {
@@ -75,23 +74,26 @@ public class ArrayTest {
         list2.forEach(record -> {
             time2.add(record[0]);
         });
+        // 获取接入方缺失时间段
+        List<String> missDate = new ArrayList<>();
         if (time1.size() != time2.size()) {
-            // 获取缺失时间段
-            result.addAll(CollectionUtil.subtract(time1, time2));
+            missDate.addAll(CollectionUtil.subtract(time1, time2));
         }
-        List<String[]> list3 = new ArrayList<>();
+        // 去除缺失时间段，获取双方都包含的时间段
+        List<String[]> bothDate = new ArrayList<>();
         list1.forEach(record -> {
-            if (!result.contains(record[0])) {
-                list3.add(record);
+            if (!missDate.contains(record[0])) {
+                bothDate.add(record);
             }
         });
+        // 获取数据量差异时间段
         int i = 0;
-        while (i < list3.size()) {
-            if (!list2.get(i)[1].equals(list3.get(i)[1])) {
-                result.add(list3.get(i)[0]);
+        while (i < bothDate.size()) {
+            if (!list2.get(i)[1].equals(bothDate.get(i)[1])) {
+                missDate.add(bothDate.get(i)[0]);
             }
             i++;
         }
-        return result;
+        return missDate;
     }
 }
