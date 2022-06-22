@@ -3,41 +3,11 @@ package basis.collection;
 import java.util.*;
 
 import basis.bean.User;
-import com.google.common.collect.Lists;
 import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
 import cn.hutool.json.JSONObject;
-import com.google.common.collect.Sets;
-import cn.hutool.core.collection.CollectionUtil;
 
 public class UtilsTest {
-
-    /**
-     * 遍历集合
-     */
-    @Test
-    public void IterateDemo() {
-        List<String> list = new ArrayList<>();
-        list.add("Hello");
-        list.add("World");
-
-        // 利用迭代器遍历集合
-        Iterator<String> iter = list.iterator();
-        // iter.previous()
-        while (iter.hasNext()) {
-            System.out.println(iter.next());
-        }
-
-        // 效果同迭代器遍历，更常用
-        for (String str : list) {
-            System.out.println(str);
-        }
-
-        // 使用 lambda 表达式遍历
-        list.forEach(str -> {
-            System.out.println(str);
-        });
-    }
 
     /**
      * List 列表元素合并

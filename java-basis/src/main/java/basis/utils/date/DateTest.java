@@ -18,8 +18,13 @@ public class DateTest {
         Date date1 = new Date();
         System.out.println("origin：" + date1);
 
+        // 返回当前系统时间，精确度为毫秒
         Date date2 = new Date(System.currentTimeMillis());
         System.out.println("current：" + date2);
+
+        // 返回当前系统时间，精确度为毫微秒
+        Date date5 = new Date(System.nanoTime());
+        System.out.println("current：" + date5);
 
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String date3 = sdf1.format(new Date());
