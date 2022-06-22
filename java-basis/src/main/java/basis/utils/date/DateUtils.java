@@ -40,9 +40,9 @@ public class DateUtils {
         calendar2.add(Calendar.DATE, offset2 - 7);
 
         String[] dateArr = new String[2];
-        // last Monday
+        // 上周一日期
         dateArr[0] = sdf.format(calendar1.getTime());
-        // last Sunday
+        // 上周天日期
         dateArr[1] = sdf.format(calendar2.getTime());
         return dateArr;
     }
@@ -69,9 +69,9 @@ public class DateUtils {
         calendar2.add(Calendar.DATE, offset2 + 7);
 
         String[] dateArr = new String[2];
-        // last Monday
+        // 下周一日期
         dateArr[0] = sdf.format(calendar1.getTime());
-        // last Sunday
+        // 下周天日期
         dateArr[1] = sdf.format(calendar2.getTime());
         return dateArr;
     }
@@ -95,8 +95,10 @@ public class DateUtils {
         cal.add(Calendar.DATE, cal.getFirstDayOfWeek() - day);
 
         String[] dateArr = new String[2];
+        // 周一日期
         dateArr[0] = sdf.format(cal.getTime());
         cal.add(Calendar.DATE, 6);
+        // 周天日期
         dateArr[1] = sdf.format(cal.getTime());
         return dateArr;
     }
@@ -108,15 +110,15 @@ public class DateUtils {
      * @throws Exception
      */
     private String[] getPreMonthDate(String startDate) throws Exception {
-        Calendar c = getPreMonth(startDate);
+        Calendar c1 = getPreMonth(startDate);
 
         String[] date = new String[2];
         //获取某月最小天数
-        int firstDay = c.getActualMinimum(Calendar.DAY_OF_MONTH);
+        int firstDay = c1.getActualMinimum(Calendar.DAY_OF_MONTH);
         //设置日历中月份的最小天数
-        c.set(Calendar.DAY_OF_MONTH, firstDay);
+        c1.set(Calendar.DAY_OF_MONTH, firstDay);
         // 上个月第一天
-        date[0] = sdf.format(c.getTime());
+        date[0] = sdf.format(c1.getTime());
 
         Calendar c2 = getPreMonth(startDate);
         int lastDay = c2.getActualMaximum(Calendar.DAY_OF_MONTH);
