@@ -1,68 +1,18 @@
-package basis.utils;
+package basis.utils.date;
 
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 
-public class DateTest {
+public class DateUtils {
 
-    /**
-     * 不同类型时间
-     */
-    @Test
-    public void DateTypeDemo() {
-        java.util.Date date1 = new java.util.Date();
-        java.sql.Date date2 = new java.sql.Date(System.currentTimeMillis());
-
-        System.out.println(date1);
-        System.out.println(date2);
-    }
-
-    /**
-     * 格式化时间
-     */
-    @Test
-    public void FormatDemo() {
-        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        String date1 = sdf1.format(new Date());
-        System.out.println(date1);
-
-        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
-        String date2 = sdf2.format(new Date());
-        System.out.println(date2);
-    }
-
-    /**
-     * 获取任意日期
-     */
-    @Test
-    public void AnyTime() {
-        // 获取当前时间前第 n 天时间
-        int n = 2;
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) - n);
-        Date passDay = calendar.getTime();
-        System.out.println(passDay);
-    }
-
-    /**
-     * 时间戳
-     */
-    @Test
-    public void TimestampDemo() {
-        Timestamp time1 = Timestamp.valueOf("1970-01-01 00:00:00.001");
-        Timestamp time2 = Timestamp.from(new Date().toInstant());
-
-        System.out.println(time1);
-        System.out.println(time2);
-    }
+    private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     @Test
-    public void Demo1() throws Exception {
+    public void Demo() throws Exception {
         System.out.println(Arrays.toString(getLastTimeInterval(new Date())));
 
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
@@ -76,7 +26,6 @@ public class DateTest {
      * @return
      */
     public String[] getLastTimeInterval(Date date) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar1 = Calendar.getInstance();
         Calendar calendar2 = Calendar.getInstance();
         calendar1.setTime(date);
@@ -159,7 +108,6 @@ public class DateTest {
      * @throws Exception
      */
     private String[] getPreMonthDate(String startDate) throws Exception {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Calendar c = getPreMonth(startDate);
 
         String[] date = new String[2];
@@ -168,12 +116,12 @@ public class DateTest {
         //设置日历中月份的最小天数
         c.set(Calendar.DAY_OF_MONTH, firstDay);
         // 上个月第一天
-        date[0] = format.format(c.getTime());
+        date[0] = sdf.format(c.getTime());
 
         Calendar c2 = getPreMonth(startDate);
         int lastDay = c2.getActualMaximum(Calendar.DAY_OF_MONTH);
         c2.set(Calendar.DAY_OF_MONTH, lastDay);
-        date[1] = format.format(c2.getTime());
+        date[1] = sdf.format(c2.getTime());
         return date;
     }
 
@@ -181,9 +129,8 @@ public class DateTest {
      * 从当前时间 yyyy-MM-dd 格式获取上个月的时间
      */
     private Calendar getPreMonth(String startDate) throws Exception {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Calendar c = Calendar.getInstance();
-        Date date = format.parse(startDate);
+        Date date = sdf.parse(startDate);
         c.setTime(date);
         c.add(Calendar.MONTH, -1);
         return c;
