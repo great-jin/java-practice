@@ -14,7 +14,7 @@ public class PerformTest {
     @Test
     public void IterateDemo() {
         List<String> list = new ArrayList<>();
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= 5; i++) {
             list.add("element " + i);
         }
 
@@ -67,7 +67,7 @@ public class PerformTest {
             list.add(String.valueOf(i));
         }
 
-        for (int i = 1; i < 20; i++) {
+        for (int i = 1; i < 10; i++) {
             System.out.println("------------------ 第" + i + "次测试 ------------------ ");
             begin = System.nanoTime();
             for (String s : list) {

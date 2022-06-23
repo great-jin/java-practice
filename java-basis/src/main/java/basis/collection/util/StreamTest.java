@@ -10,14 +10,14 @@ import java.util.stream.Collectors;
 public class StreamTest {
 
     /**
-     * 串行: 再在可能存在共享资源、线程安全等问题的时候使用
+     * 串行: 在可能存在共享资源、线程安全等问题的时候使用
      * <p>
      * 并行: 在无线程安全问题的前提下，并且单纯的数据处理的时候使用
      */
     @Test
     public void StreamDemo() {
         List<Integer> list = new ArrayList<>();
-        for (int i = 1; i <= 1000; i++) {
+        for (int i = 1; i <= 10; i++) {
             list.add(i);
         }
 
@@ -42,16 +42,6 @@ public class StreamTest {
         for (int i = 1; i <= 5; i++) {
             list.add(new User(String.valueOf(i), i));
         }
-
-        System.out.println("-------- 单管流 ----------");
-        list.stream().forEach(record -> {
-            System.out.println(record);
-        });
-
-        System.out.println("-------- 并发流 ----------");
-        list.parallelStream().forEach(record -> {
-            System.out.println(record);
-        });
 
         System.out.println("-------- 数据过滤 ----------");
         User target = list.stream()
