@@ -41,7 +41,7 @@ public class PerformTest {
         });
         System.out.println();
 
-        // 单管流遍历
+        // 串行流遍历
         System.out.println("单管流遍历");
         list.stream().forEach(str -> {
             System.out.print(str + ", ");
@@ -67,7 +67,7 @@ public class PerformTest {
             list.add(String.valueOf(i));
         }
 
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 20; i++) {
             System.out.println("------------------ 第" + i + "次测试 ------------------ ");
             begin = System.nanoTime();
             for (String s : list) {

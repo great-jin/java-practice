@@ -1,4 +1,4 @@
-package basis.collection;
+package basis.collection.util;
 
 import java.util.*;
 

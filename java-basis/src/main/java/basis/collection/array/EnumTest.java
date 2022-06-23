@@ -1,4 +1,4 @@
-package basis.collection;
+package basis.collection.array;
 
 import org.junit.Test;
 
@@ -24,7 +24,6 @@ public class EnumTest {
         System.out.println(day == Weekday.SAT);
         System.out.println(day.equals(Weekday.SUN));
     }
-
 }
 
 enum Color {

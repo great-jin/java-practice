@@ -1,4 +1,4 @@
-package basis.collection;
+package basis.collection.util;
 
 import basis.bean.User;
 import cn.hutool.core.collection.CollectionUtil;
@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class ToolsTest {
 
@@ -97,40 +96,5 @@ public class ToolsTest {
         // 去交集, 更新原集合
         list1.removeAll(list2);
         System.out.println("list1 removeAll list2: " + list1);
-    }
-
-    /**
-     * Java 8 自带的流处理列表
-     */
-    @Test
-    public void StreamDemo() {
-        List<User> list = new ArrayList<>();
-        for (int i = 1; i <= 5; i++) {
-            list.add(new User(String.valueOf(i), i));
-        }
-
-        System.out.println("-------- 单管流 ----------");
-        list.stream().forEach(record -> {
-            System.out.println(record);
-        });
-
-        System.out.println("-------- 并发流 ----------");
-        list.parallelStream().forEach(record -> {
-            System.out.println(record);
-        });
-
-        System.out.println("-------- 数据过滤 ----------");
-        User target = list.stream()
-                .filter(user -> user.getAge() == 1)
-                .findAny()
-                .orElse(null);
-        System.out.println(target);
-
-        System.out.println("-------- 数据去重 ----------");
-        List<Integer> ageList = list.stream()
-                .map(User::getAge)
-                .distinct()
-                .collect(Collectors.toList());
-        System.out.println(ageList);
     }
 }
