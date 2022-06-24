@@ -2,8 +2,6 @@ package basis.collection.array;
 
 import java.util.*;
 
-import basis.bean.User;
-import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
 
 public class ListTest {

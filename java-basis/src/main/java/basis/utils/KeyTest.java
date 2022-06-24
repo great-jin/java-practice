@@ -1,10 +1,8 @@
 package basis.utils;
 
-import basis.bean.Human;
-import basis.bean.Student;
+import bean.Human;
+import bean.Student;
 import org.junit.Test;
-
-import java.util.Date;
 
 public class KeyTest {
 

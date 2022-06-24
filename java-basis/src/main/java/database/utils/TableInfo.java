@@ -1,4 +1,4 @@
-package sql.utils;
+package database.utils;
 
 public class TableInfo {
 

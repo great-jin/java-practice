@@ -1,4 +1,4 @@
-package sql.utils;
+package database.utils;
 
 import cn.hutool.core.collection.CollectionUtil;
 import org.junit.Test;

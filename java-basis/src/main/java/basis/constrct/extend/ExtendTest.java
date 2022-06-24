@@ -1,7 +1,7 @@
 package basis.constrct.extend;
 
-import basis.bean.Human;
-import basis.bean.Student;
+import bean.Human;
+import bean.Student;
 
 public class ExtendTest {
 

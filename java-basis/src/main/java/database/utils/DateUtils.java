@@ -1,4 +1,4 @@
-package sql.utils;
+package database.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

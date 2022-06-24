@@ -2,7 +2,7 @@ package basis.collection.util;
 
 import java.util.*;
 
-import basis.bean.User;
+import bean.User;
 import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
 import cn.hutool.json.JSONObject;

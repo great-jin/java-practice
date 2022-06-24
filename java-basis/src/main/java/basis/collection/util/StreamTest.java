@@ -1,6 +1,6 @@
 package basis.collection.util;
 
-import basis.bean.User;
+import bean.User;
 import org.junit.Test;
 
 import java.util.ArrayList;

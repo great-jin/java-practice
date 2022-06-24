@@ -1,6 +1,5 @@
 package basis.collection.util;
 
-import basis.bean.User;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
 import com.google.common.base.Strings;

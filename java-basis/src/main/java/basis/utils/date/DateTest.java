@@ -2,7 +2,6 @@ package basis.utils.date;
 
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.sql.Timestamp;

@@ -1,9 +1,9 @@
-package sql;
+package database;
 
 import cn.hutool.core.util.StrUtil;
 import org.junit.Test;
-import sql.utils.DateUtils;
-import sql.utils.TableInfo;
+import database.utils.DateUtils;
+import database.utils.TableInfo;
 
 public class CountSQLTest {
 

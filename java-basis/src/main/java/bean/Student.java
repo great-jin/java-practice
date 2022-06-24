@@ -1,4 +1,4 @@
-package basis.bean;
+package bean;
 
 public class Student extends Human {
 

@@ -1,4 +1,4 @@
-package tools;
+package tools.encryption;
 
 import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.crypto.SmUtil;
