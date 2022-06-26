@@ -15,6 +15,8 @@ public class DateTest {
     @Test
     public void UtilDateDemo() {
         Date date1 = new Date();
+        System.out.println("get time" + date1.getTime());
+
         System.out.println("origin：" + date1);
 
         // 返回当前系统时间，精确度为毫秒

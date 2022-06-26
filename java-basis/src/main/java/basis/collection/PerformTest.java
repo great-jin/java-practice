@@ -9,7 +9,7 @@ import java.util.List;
 public class PerformTest {
 
     /**
-     * 遍历集合
+     * 迭代器
      */
     @Test
     public void IterateDemo() {
@@ -23,9 +23,21 @@ public class PerformTest {
         // iter.previous()
         System.out.println("迭代器遍历");
         while (iter.hasNext()) {
-            System.out.print(iter.next() + ", ");
+            iter.next();
+            System.out.println("1 ");
         }
         System.out.println();
+    }
+
+    /**
+     * 集合遍历
+     */
+    @Test
+    public void VisitedDemo() {
+        List<String> list = new ArrayList<>();
+        for (int i = 1; i <= 5; i++) {
+            list.add("element " + i);
+        }
 
         // 效果同迭代器遍历，更常用
         System.out.println("for循环遍历");
@@ -57,17 +69,39 @@ public class PerformTest {
     }
 
     /**
+     * 迭代器性能测试
+     */
+    @Test
+    public void IterPerform() {
+        long begin, end;
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 1000; i++) {
+            list.add(String.valueOf(i));
+        }
+
+        for (int i = 1; i < 10; i++) {
+            System.out.println("------------------ 第" + i + "次测试 ------------------ ");
+            begin = System.nanoTime();
+            Iterator<String> iter = list.iterator();
+            while (iter.hasNext()) {
+                System.out.print(iter.next());
+            }
+            end = System.nanoTime();
+            System.out.println("\nIterator 循环耗时: " + (end - begin) / 1000 + " μs");}
+    }
+
+    /**
      * Performance testing
      */
     @Test
     public void PerformTest() {
         long begin, end;
         List<String> list = new ArrayList<>();
-        for (int i = 0; i < 1000000; i++) {
-            list.add(String.valueOf(i));
+        for (int j = 0; j < 100000; j++) {
+            list.add(String.valueOf(Math.random()));
         }
 
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i <= 10; i++) {
             System.out.println("------------------ 第" + i + "次测试 ------------------ ");
             begin = System.nanoTime();
             for (String s : list) {
@@ -88,7 +122,7 @@ public class PerformTest {
                 e.toString();
             });
             end = System.nanoTime();
-            System.out.println("单管道 stream 耗时: " + (end - begin) / 1000 + " μs");
+            System.out.println("串行流 stream 耗时: " + (end - begin) / 1000 + " μs");
 
             begin = System.nanoTime();
             list.parallelStream().forEach(e -> {

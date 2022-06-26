@@ -10,9 +10,9 @@ public class ArrayTest {
     @Test
     public void Demo() {
         // Set the fixed array size
-        String[] st = new String[5];
-        st[0] = "Hello";
-        System.out.println(Arrays.toString(st));
+        String[] arr = new String[5];
+        arr[0] = "Hello";
+        System.out.println(Arrays.toString(arr));
 
         // Init the array size and content in definition
         // the size is "2", it's fixed

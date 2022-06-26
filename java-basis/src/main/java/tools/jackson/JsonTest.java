@@ -44,6 +44,7 @@ public class JsonTest {
 
         JsonNode node = objectMapper.readTree(jsStr);
         System.out.println("node: " + node);
+        node.shortValue();
         System.out.println("node name: " + node.get("name"));
     }
 }
