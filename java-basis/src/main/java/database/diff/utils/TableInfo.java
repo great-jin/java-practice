@@ -1,4 +1,4 @@
-package database.utils;
+package database.diff.utils;
 
 public class TableInfo {
 

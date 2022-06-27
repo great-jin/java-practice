@@ -1,4 +1,4 @@
-package database.utils;
+package database.diff.utils;
 
 import cn.hutool.core.collection.CollectionUtil;
 import org.junit.Test;
