@@ -1,4 +1,4 @@
-package database.diff;
+package database.diff.sql;
 
 import cn.hutool.core.util.StrUtil;
 import org.junit.Test;
