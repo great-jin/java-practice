@@ -33,6 +33,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.27</version>
         </dependency>
+        <!-- Oracle 数据库依赖 -->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.4</version>
+        </dependency>
         <!-- 日志依赖 -->
         <dependency>
             <groupId>org.slf4j</groupId>

@@ -1,4 +1,4 @@
-package database;
+package database.jdbc;
 
 import cn.hutool.json.JSONObject;
 import org.junit.Before;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.LinkedHashMap;
 
-public class JDBCTest {
+public class MySQLTest {
 
     final String CLASSNAME = "com.mysql.cj.jdbc.Driver";
     final String JDBC = "jdbc:mysql://localhost:3306/budai_web_data?useSSL=true&useUnicode=true&characterEncoding=utf-8";
@@ -32,7 +32,6 @@ public class JDBCTest {
     @Test
     public void SMDemo() {
         final String SQL = "select * from user";
-
         try (Connection con = DriverManager.getConnection(JDBC, USERNAME, PASSWORD)) {
             Statement stmt = con.createStatement();
             stmt.executeQuery(SQL);
@@ -47,7 +46,6 @@ public class JDBCTest {
     @Test
     public void PSDemo() {
         final String SQL = "select * from user where id=?";
-
         try (Connection con = DriverManager.getConnection(JDBC, USERNAME, PASSWORD);
              PreparedStatement ps = con.prepareStatement(SQL)) {
             ps.setString(1, "1");
