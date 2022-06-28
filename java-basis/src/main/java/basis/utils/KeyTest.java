@@ -1,8 +1,8 @@
 package basis.utils;
 
-import bean.Human;
-import bean.Student;
 import org.junit.Test;
+
+import java.util.Date;
 
 public class KeyTest {
 
@@ -43,13 +43,13 @@ public class KeyTest {
      */
     @Test
     public void InstanceDemo() {
-        Human human = new Human();
-        Student student = new Student();
+        java.util.Date utilDate = new java.util.Date();
+        java.sql.Date sqlDate = new java.sql.Date(System.currentTimeMillis());
 
-        boolean b1 = human instanceof Human;
+        boolean b1 = utilDate instanceof java.sql.Date;
         System.out.println(b1);
 
-        boolean b2 = student instanceof Human;
+        boolean b2 = sqlDate instanceof java.util.Date;
         System.out.println(b2);
     }
 }

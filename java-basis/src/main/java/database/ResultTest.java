@@ -40,7 +40,7 @@ public class ResultTest {
             while (result.next()) {
                 String[] r = new String[2];
                 for (int i = 1; i <= 2; i++) {
-                    r[i-1] = result.getString(i);
+                    r[i - 1] = result.getString(i);
                 }
                 list.add(r);
             }
