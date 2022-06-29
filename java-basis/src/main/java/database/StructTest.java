@@ -15,33 +15,29 @@ public class StructTest {
     @Test
     public void SMDemo() {
         List<String> tableList = new ArrayList<>();
-        List<String> typeList = new ArrayList<>();
         List<String> catList = new ArrayList<>();
-        List<String> schemaList = new ArrayList<>();
+        List<String> typeList = new ArrayList<>();
         List<String> remarkList = new ArrayList<>();
 
         try (Connection conn = DriverManager.getConnection(JDBC, USERNAME, PASSWORD)) {
             DatabaseMetaData dbMetaData = conn.getMetaData();
             ResultSet rs = dbMetaData.getTables(null, null, null, new String[]{"TABLE"});
             while (rs.next()) {
+                // 表名
                 tableList.add(rs.getString("TABLE_NAME"));
+                // 数据库名
                 catList.add(rs.getString("TABLE_CAT"));
-                // schemaList.add(rs.getString("TABLE_SCHEMA"));
-                // remarkList.add(rs.getString("REMARKS"));
-                // typeList.add(rs.getString("TABLE_TYPE"));
-
+                // 类型
+                typeList.add(rs.getString("TABLE_TYPE"));
+                // 备注
+                remarkList.add(rs.getString("REMARKS"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        System.out.println("table list: ");
         System.out.println(tableList);
-        System.out.println("database list: ");
         System.out.println(catList);
-
-        // System.out.println(typeList);
-        // System.out.println(schemaList);
-        // System.out.println(remarkList);
+        System.out.println(typeList);
+        System.out.println(remarkList);
     }
 }

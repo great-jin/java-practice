@@ -27,7 +27,7 @@ public class OracleTest {
     }
 
     @Test
-    public void SMDemo() {
+    public void OracleDemo() {
         final String SQL = "select * from TEST_0628";
         try (Connection con = DriverManager.getConnection(JDBC, USERNAME, PASSWORD)) {
             Map<String, Object> map = new LinkedHashMap<>();

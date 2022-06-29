@@ -1,6 +1,5 @@
 package database.jdbc;
 
-import cn.hutool.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,40 +29,42 @@ public class MySQLTest {
     }
 
     @Test
-    public void SMDemo() {
-        final String SQL = "select * from user";
+    public void QueryDemo() {
+        final String SQL = "select * from user_info";
         try (Connection con = DriverManager.getConnection(JDBC, USERNAME, PASSWORD)) {
             Statement stmt = con.createStatement();
             stmt.executeQuery(SQL);
             ResultSet result = stmt.getResultSet();
 
-            PrintResultJson(result);
+            while (result.next()) {
+                for (int i = 1; i <= result.getMetaData().getColumnCount(); i++) {
+                    map.put(result.getMetaData().getColumnName(i), result.getString(i));
+                }
+                list.add(map);
+            }
+            System.out.println(list);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
     @Test
-    public void PSDemo() {
-        final String SQL = "select * from user where id=?";
+    public void PrepareDemo() {
+        final String SQL = "select * from user_info where id=?";
         try (Connection con = DriverManager.getConnection(JDBC, USERNAME, PASSWORD);
              PreparedStatement ps = con.prepareStatement(SQL)) {
-            ps.setString(1, "1");
+            ps.setString(1, "4");
             ResultSet result = ps.executeQuery();
 
-            PrintResultJson(result);
+            while (result.next()) {
+                for (int i = 1; i <= result.getMetaData().getColumnCount(); i++) {
+                    map.put(result.getMetaData().getColumnName(i), result.getString(i));
+                }
+                list.add(map);
+            }
+            System.out.println(list);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-    }
-
-    public void PrintResultJson(ResultSet result) throws SQLException {
-        while (result.next()) {
-            for (int i = 1; i <= result.getMetaData().getColumnCount(); i++) {
-                map.put(result.getMetaData().getColumnName(i), result.getString(i));
-            }
-            list.add(new JSONObject(map));
-        }
-        System.out.println(list);
     }
 }
