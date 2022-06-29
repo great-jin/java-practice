@@ -1,4 +1,4 @@
-package tools.json;
+package tools.json.fastjson;
 
 import bean.Teacher;
 import com.alibaba.fastjson.JSON;

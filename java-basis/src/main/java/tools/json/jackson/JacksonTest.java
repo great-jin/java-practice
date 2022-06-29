@@ -1,4 +1,4 @@
-package tools.json;
+package tools.json.jackson;
 
 import bean.Teacher;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -43,7 +43,19 @@ public class JacksonTest {
 
         Teacher teacher1 = objectMapper.readValue(jsStr, Teacher.class);
         System.out.println(teacher1.toString());
+    }
 
+    /**
+     * Jackson annotation
+     */
+    @Test
+    public void SellDemo() throws JsonProcessingException {
+        Seller seller = new Seller("123", "Alex", "male", new Date(), "China");
+        String jsStr = objectMapper.writeValueAsString(seller);
+        System.out.println("js result: \n" + jsStr);
+
+        Seller seller1 = objectMapper.readValue(jsStr, Seller.class);
+        System.out.println("object result: \n" + seller1);
     }
 
     /**

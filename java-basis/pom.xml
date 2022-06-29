@@ -9,42 +9,23 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-        <!-- Spring依赖 -->
+        <!-- Spring 依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>5.3.14</version>
         </dependency>
-        <!-- HuTool工具包 -->
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.8.3</version>
-        </dependency>
-        <!-- Google工具包 -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>31.1-jre</version>
-        </dependency>
-        <!-- MySQL数据库依赖 -->
+        <!-- MySQL 数据库 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.27</version>
         </dependency>
-        <!-- Oracle 数据库依赖 -->
+        <!-- Oracle 数据库 -->
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc6</artifactId>
             <version>11.2.0.4</version>
-        </dependency>
-        <!-- 日志依赖 -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.36</version>
-            <scope>compile</scope>
         </dependency>
         <!-- 国密 -->
         <dependency>
@@ -76,17 +57,36 @@
             <version>4.0.0</version>
             <scope>compile</scope>
         </dependency>
-        <!-- Json工具包 -->
+        <!-- Jackson 工具包 -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.13.3</version>
         </dependency>
-        <!-- Fastjson工具包 -->
+        <!-- Fastjson 工具包 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>2.0.7.graal</version>
+        </dependency>
+        <!-- HuTool 工具包 -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.3</version>
+        </dependency>
+        <!-- Google 工具包 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.1-jre</version>
+        </dependency>
+        <!-- Log4j 日志 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version>
+            <scope>compile</scope>
         </dependency>
         <!-- 测试单元依赖 -->
         <dependency>
