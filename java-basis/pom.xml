@@ -81,6 +81,12 @@
             <artifactId>guava</artifactId>
             <version>31.1-jre</version>
         </dependency>
+        <!-- EasyExcel 工具包 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>3.1.1</version>
+        </dependency>
         <!-- Log4j 日志 -->
         <dependency>
             <groupId>org.slf4j</groupId>
