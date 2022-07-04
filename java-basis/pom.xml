@@ -15,18 +15,6 @@
             <artifactId>spring-web</artifactId>
             <version>5.3.14</version>
         </dependency>
-        <!-- MySQL 数据库 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.27</version>
-        </dependency>
-        <!-- Oracle 数据库 -->
-        <dependency>
-            <groupId>com.oracle.database.jdbc</groupId>
-            <artifactId>ojdbc6</artifactId>
-            <version>11.2.0.4</version>
-        </dependency>
         <!-- 国密 -->
         <dependency>
             <groupId>cn.hutool</groupId>
