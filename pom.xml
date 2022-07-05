@@ -12,5 +12,7 @@
     <modules>
         <module>java-basis</module>
         <module>spring-demo</module>
+        <module>demo-thread</module>
+        <module>thread-demo</module>
     </modules>
 </project>
