@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>xyz.ibudai</groupId>
-    <artifactId>great</artifactId>
+    <artifactId>spring-cloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-cloud</name>
     <description>spring-cloud</description>
