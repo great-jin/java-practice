@@ -1,5 +1,6 @@
-package com.budai.thread.config;
+package com.budai.config;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -7,7 +8,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 
 @Configuration
-//@ConfigurationProperties(prefix = "task.pool")
+@ConfigurationProperties(prefix = "task.pool")
 public class ThreadConfig {
 
     /**

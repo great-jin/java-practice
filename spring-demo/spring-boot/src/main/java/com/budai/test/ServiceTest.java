@@ -1,32 +1,33 @@
-package com.budai.annotation.autowire;
+package com.budai.test;
 
-import com.budai.annotation.autowire.service.UserService;
-import org.junit.Test;
+import com.budai.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("service")
 public class ServiceTest {
 
     /**
-     * 非法，userService 多个继承类时需指定名称
+     * 1. 非法，userService 多个继承类时需指定名称
      */
-    @Autowired
-    UserService userService;
+    /*@Autowired
+    UserService userService;*/
 
     /**
-     * 合法，变量名与 @Service 中定义一致
+     * 2. 合法，变量名与 @Service 中定义一致
      */
     @Autowired
     UserService userService1;
 
     /**
-     * 合法，@Qualifier 与 @Service 中定义一致
+     * 3. 合法，@Qualifier 与 @Service 中定义一致
      */
     @Autowired
-    @Qualifier(value = "userService")
+    @Qualifier(value = "userService1")
     UserService userService2;
 
     /**
@@ -34,7 +35,7 @@ public class ServiceTest {
      */
     @GetMapping("/print")
     public String TestAPI() {
-        return userService.print();
+        return userService1.print();
     }
 
 }

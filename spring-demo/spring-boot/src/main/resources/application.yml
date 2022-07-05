@@ -11,6 +11,5 @@ task:
     queueCapacity: 50   #设置队列容量
 
 
-
 myKey:
-  info: my info
+  info: my_info

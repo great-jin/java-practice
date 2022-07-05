@@ -1,6 +1,6 @@
-package com.budai.annotation.bean.config;
+package com.budai.config;
 
-import com.budai.annotation.bean.model.User;
+import com.budai.model.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;

@@ -1,4 +1,4 @@
-package com.budai.thread;
+package com.budai.test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;

@@ -1,4 +1,4 @@
-package com.budai.annotation.bean.model;
+package com.budai.model;
 
 public class User {
     private String name;
