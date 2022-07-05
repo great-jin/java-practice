@@ -15,9 +15,7 @@ public class ListTest {
     public void ListDemo() {
         List<String> list = new ArrayList<>();
         list.add("Jack");
-        list.add("Mark");
         list.add("Beth");
-        // 允许重复元素
         list.add("Beth");
 
         System.out.println(list);
@@ -31,17 +29,13 @@ public class ListTest {
     @Test
     public void LinkedListDemo() {
         LinkedList<String> list = new LinkedList<>();
-        list.add("Alex");
-        System.out.println(list);
-
+        list.add("Mark");
         // 操作头
         list.addFirst("Jack");
-        list.removeFirst();
-
+        // list.removeFirst();
         // 操作尾
         list.addLast("Beth");
-        list.removeLast();
-
+        // list.removeLast();
         System.out.println(list);
     }
 }

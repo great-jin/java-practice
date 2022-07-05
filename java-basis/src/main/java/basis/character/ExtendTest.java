@@ -1,7 +1,6 @@
-package basis.character.extend;
+package basis.character;
 
 public class ExtendTest {
-
     public static void main(String[] args) {
         Human human = new Human("Alex", "Male");
         human.breath();

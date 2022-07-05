@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 // ElementType.TYPE: For class or interface
-// ElementType.FIELD: or field
+// ElementType.FIELD: For field
 // ElementType.METHOD: For method
 // ElementType.CONSTRUCTOR: For constructor
 // ElementType.PARAMETER: For method parameter

@@ -3,6 +3,7 @@ package basis.filesIO;
 import org.junit.Test;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class FileIOTest {
 
@@ -51,7 +52,7 @@ public class FileIOTest {
         final String message = "This is a message from OutputStreamWriter.";
 
         try (OutputStream out = new FileOutputStream(targetPath);
-             OutputStreamWriter writer = new OutputStreamWriter(out, "UTF-8");) {
+             OutputStreamWriter writer = new OutputStreamWriter(out, StandardCharsets.UTF_8);) {
             writer.write(message);
 
             System.out.println("write complete");
@@ -101,22 +102,4 @@ public class FileIOTest {
         }
     }
 
-
-    /**
-     * byte data input
-     */
-    @Test
-    public void DataInputDemo() {
-        InputStream in = null;
-        DataInputStream dis = new DataInputStream(in);
-    }
-
-    /**
-     * byte data output
-     */
-    @Test
-    public void DataOutputDemo() {
-        OutputStream out = null;
-        DataOutputStream dos = new DataOutputStream(out);
-    }
 }

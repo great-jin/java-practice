@@ -18,8 +18,6 @@ public class SetTest {
         set.add("Beth");
         // 重复不添加
         set.add("Beth");
-        set.add("Mark");
-
         System.out.println(set);
     }
 
@@ -34,7 +32,6 @@ public class SetTest {
         set.add("Alex");
         set.add("Beth");
         set.add("Mark");
-
         System.out.println(set);
     }
 
@@ -48,7 +45,6 @@ public class SetTest {
         set.add("Beth");
         set.add("Alex");
         set.add("Charlie");
-
         System.out.println(set);
     }
 }

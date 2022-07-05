@@ -1,4 +1,14 @@
-package basis.character.abs;
+package basis.character;
+
+public class AbstractTest {
+    public static void main(String[] args) {
+        Abs absSon = new AbsSon();
+        absSon.hello();
+
+        int sum = absSon.AddElem(10, 20);
+        System.out.println(sum);
+    }
+}
 
 /**
  * 抽象类不能实例化，方法不能包含方法体
@@ -38,3 +48,8 @@ class AbsSon extends Abs {
         return a + b;
     }
 }
+
+
+
+
+

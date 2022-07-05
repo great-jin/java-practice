@@ -15,10 +15,8 @@ public class MapTest {
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "Alex");
         map.put(2, "Mark");
-        map.put(3, "Nancy");
         // 替换重复 Key 值
-        map.put(3, "Beth");
-        System.out.println(map);
+        map.put(2, "Beth");
 
         // 是否包含对应键值对
         System.out.println(map.containsKey(2));
@@ -34,8 +32,7 @@ public class MapTest {
         Map<Integer, String> map = new LinkedHashMap<>();
         map.put(1, "Alex");
         map.put(2, "Mark");
-        map.put(3, "Nancy");
-
+        map.put(3, "Beth");
         System.out.println(map);
     }
 
@@ -46,10 +43,9 @@ public class MapTest {
     @Test
     public void TreeMapDemo() {
         Map<Integer, String> map = new TreeMap<>();
-        map.put(2, "Nancy");
+        map.put(2, "Beth");
         map.put(1, "Alex");
         map.put(3, "Mark");
-
         System.out.println(map);
     }
 
@@ -61,8 +57,7 @@ public class MapTest {
         Map<Integer, String> map = new Hashtable<>();
         map.put(1, "Alex");
         map.put(2, "Mark");
-        map.put(3, "Nancy");
-
+        map.put(3, "Beth");
         System.out.println(map);
     }
 }

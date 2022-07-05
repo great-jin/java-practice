@@ -1,6 +1,19 @@
-package basis.character.inter;
+package basis.character;
 
-public interface InterTest {
+public class InterfaceTest {
+    public static void main(String[] args) {
+        // instance the object
+        InterTestImpl interTest = new InterTestImpl();
+
+        int sum = interTest.AddElem(10, 20);
+        System.out.println(sum);
+
+        // will execute default method body
+        interTest.defaultMethod();
+    }
+}
+
+interface InterTest {
 
     int AddElem(int a, int b);
 
