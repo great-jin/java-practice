@@ -1,4 +1,4 @@
-package single.synchronize;
+package synchronize;
 
 import org.junit.Test;
 

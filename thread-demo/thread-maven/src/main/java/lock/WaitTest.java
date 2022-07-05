@@ -1,6 +1,4 @@
-package single.lock;
-
-import org.junit.Test;
+package lock;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

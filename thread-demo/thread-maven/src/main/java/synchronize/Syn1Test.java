@@ -1,4 +1,4 @@
-package single.synchronize;
+package synchronize;
 
 public class Syn1Test {
 

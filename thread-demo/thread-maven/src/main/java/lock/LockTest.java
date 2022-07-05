@@ -1,4 +1,4 @@
-package single.lock;
+package lock;
 
 import org.junit.Test;
 
