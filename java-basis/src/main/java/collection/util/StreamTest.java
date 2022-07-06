@@ -39,22 +39,22 @@ public class StreamTest {
     @Test
     public void UtilDemo() {
         List<User> list = new ArrayList<>();
-        for (int i = 1; i <= 5; i++) {
-            list.add(new User(String.valueOf(i), i));
-        }
+        list.add(new User("张三", 20));
+        list.add(new User("李四", 20));
+        list.add(new User("李四", 30));
 
         System.out.println("-------- 数据过滤 ----------");
-        User target = list.stream()
-                .filter(user -> user.getAge() == 1)
+        User user = list.stream()
+                .filter(item -> item.getAge() == 20)
                 .findAny()
                 .orElse(null);
-        System.out.println(target);
+        System.out.println(user);
 
         System.out.println("-------- 数据去重 ----------");
-        List<Integer> ageList = list.stream()
-                .map(User::getAge)
+        List<String> uniqueList = list.stream()
+                .map(User::getName)
                 .distinct()
                 .collect(Collectors.toList());
-        System.out.println(ageList);
+        System.out.println(uniqueList);
     }
 }

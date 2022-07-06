@@ -1,11 +1,14 @@
 package collection.util;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import bean.User;
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
-import cn.hutool.json.JSONObject;
 
 public class UtilsTest {
 
@@ -32,7 +35,6 @@ public class UtilsTest {
         list.add("Blob");
         list.add("Blob");
         list.add("Mark");
-
         Set<String> set = new HashSet<>(list);
         System.out.println(set);
     }
@@ -55,12 +57,13 @@ public class UtilsTest {
      * Map 与 Json 格式转化
      */
     @Test
-    public void MapToJsonDemo() {
+    public void MapToJsonDemo() throws JsonProcessingException {
         Map<Integer, String> map = new Hashtable<>();
         map.put(1, "Alex");
         map.put(2, "Blob");
-
-        System.out.println(new JSONObject(map));
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsStr = objectMapper.writeValueAsString(map);
+        System.out.println(jsStr);
     }
 
     /**
@@ -72,7 +75,6 @@ public class UtilsTest {
         list.add("Alex");
         list.add("Mark");
         list.add("Beth");
-
         Collections.sort(list);
         System.out.println(list);
     }
@@ -86,11 +88,34 @@ public class UtilsTest {
         list.add(new User("Alex", 28));
         list.add(new User("Beth", 14));
         list.add(new User("Mark", 45));
-
         // 列表排序
         list.sort(Comparator.comparing(User::getAge));
         list.forEach(record -> {
             System.out.println(record.toString());
         });
+    }
+
+    /**
+     * 列表模糊查询
+     */
+    @Test
+    public void VagueDemo() {
+        List<User> list = new ArrayList<>();
+        for (int i = 1; i <= 2; i++) {
+            list.add(new User("张三" + i, i));
+        }
+        for (int i = 3; i <= 5; i++) {
+            list.add(new User("李四" + i, i));
+        }
+        String lookBook = "张三";
+        Pattern pattern = Pattern.compile(lookBook, Pattern.CASE_INSENSITIVE);
+        List<User> result = new ArrayList<>();
+        for (User user : list) {
+            Matcher matcher = pattern.matcher(user.getName());
+            if (matcher.find()) {
+                result.add(user);
+            }
+        }
+        System.out.println(result);
     }
 }

@@ -8,6 +8,10 @@ public class User {
         return age;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public User(String name, int age) {
         this.name = name;
         this.age = age;
