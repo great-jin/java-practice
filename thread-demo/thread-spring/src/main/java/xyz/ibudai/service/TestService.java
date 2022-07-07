@@ -4,7 +4,11 @@ import java.util.concurrent.Future;
 
 public interface TestService {
 
-    Future<String> myTask();
+    Future<String> Task();
 
-    Future<String> myTask1();
+    Future<String> Task1();
+
+    Future<String> Task3();
+
+    Future<String> Task4();
 }

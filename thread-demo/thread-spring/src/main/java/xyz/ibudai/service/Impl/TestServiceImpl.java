@@ -19,21 +19,44 @@ public class TestServiceImpl implements TestService {
     @Autowired
     private ThreadPoolTaskExecutor taskExecutor;
 
-    @Async
     @Override
-    public Future<String> myTask() {
-        taskExecutor.submit(() -> {
-            logger.info("任务 1");
-        });
+    public Future<String> Task() {
+        for (int i = 0; i < 5; i++) {
+            int finalI = i;
+            taskExecutor.submit(() -> {
+                logger.info("任务 1 : " + finalI);
+            });
+        }
         return new AsyncResult<>("任务 1 执行完成");
     }
 
-    @Async
     @Override
-    public Future<String> myTask1() {
-        taskExecutor.submit(() -> {
-            logger.info("任务 2");
-        });
+    public Future<String> Task1() {
+        for (int i = 0; i < 5; i++) {
+            int finalI = i;
+            taskExecutor.submit(() -> {
+                logger.info("任务 2 : " + finalI);
+            });
+        }
         return new AsyncResult<>("任务 2 执行完成");
+    }
+
+
+    @Override
+    @Async("taskExecutor")
+    public Future<String> Task3() {
+        for (int i = 0; i < 5; i++) {
+            logger.info("任务 3 : " + i);
+        }
+        return new AsyncResult<>("任务 3 执行完成");
+    }
+
+    @Override
+    @Async("taskExecutor")
+    public Future<String> Task4() {
+        for (int i = 0; i < 5; i++) {
+            logger.info("任务 4 : " + i);
+        }
+        return new AsyncResult<>("任务 4 执行完成");
     }
 }

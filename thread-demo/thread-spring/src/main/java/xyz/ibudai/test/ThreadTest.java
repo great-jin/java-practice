@@ -16,7 +16,9 @@ public class ThreadTest {
 
     @GetMapping("task")
     public void Task() {
-        testService.myTask();
-        testService.myTask1();
+        testService.Task();
+        testService.Task1();
+        testService.Task3();
+        testService.Task4();
     }
 }
