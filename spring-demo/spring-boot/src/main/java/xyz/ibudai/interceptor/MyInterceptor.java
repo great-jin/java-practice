@@ -3,6 +3,7 @@ package xyz.ibudai.interceptor;
 import org.aopalliance.intercept.Invocation;
 
 public class MyInterceptor implements Interceptor {
+
     /**
      * 事前方法
      */
