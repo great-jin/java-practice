@@ -1,9 +1,9 @@
-package tools.json.fastjson;
+package json.fastjson;
 
-import bean.Teacher;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import json.Teacher;
 import org.junit.Test;
 
 import java.util.Date;

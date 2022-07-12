@@ -1,4 +1,4 @@
-package tools.encryption;
+package encryption;
 
 import cn.hutool.crypto.SmUtil;
 

@@ -14,5 +14,6 @@
         <module>spring-demo</module>
         <module>demo-thread</module>
         <module>thread-demo</module>
+        <module>java-tools</module>
     </modules>
 </project>

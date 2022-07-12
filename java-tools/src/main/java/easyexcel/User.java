@@ -1,4 +1,4 @@
-package tools.easyexcel;
+package easyexcel;
 
 import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;

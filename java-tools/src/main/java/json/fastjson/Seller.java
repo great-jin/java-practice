@@ -1,4 +1,4 @@
-package tools.json.fastjson;
+package json.fastjson;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package tools.json.jackson;
+package json.jackson;
 
 import com.fasterxml.jackson.annotation.*;
 

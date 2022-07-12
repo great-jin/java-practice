@@ -1,4 +1,4 @@
-package basis.filesIO;
+package files;
 
 import org.junit.Test;
 

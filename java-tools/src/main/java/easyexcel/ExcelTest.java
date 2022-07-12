@@ -1,6 +1,5 @@
-package tools.easyexcel;
+package easyexcel;
 
-import bean.Teacher;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.write.style.column.LongestMatchColumnWidthStyleStrategy;
 import org.junit.Test;
