@@ -1,4 +1,4 @@
-package encryption;
+package encryption.sm;
 
 import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.crypto.SmUtil;
