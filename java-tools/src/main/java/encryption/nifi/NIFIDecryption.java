@@ -28,7 +28,7 @@ public class NIFIDecryption {
 
     @Test
     public void Decryption() throws Exception {
-        String encryptText = "aeb1696aa1f1cb70db947104136ec4929a25731320badd3101d066de2610e93a";
+        String encryptText = "72770e15795b12e8852596214df2451ee82e7e3eeebed224a9a6f2b8586bf653";
         System.out.println(encryptText);
         System.out.println(decryptFlowElement(encryptText, DEFAULT_KEYS));
     }
