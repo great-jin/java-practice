@@ -89,6 +89,12 @@
             <artifactId>nifi-security</artifactId>
             <version>1.11.4</version>
         </dependency>
+        <!-- YML配置加密 -->
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot</artifactId>
+            <version>2.0.0</version>
+        </dependency>
         <!-- 单元测试 -->
         <dependency>
             <groupId>junit</groupId>
