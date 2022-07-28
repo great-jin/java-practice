@@ -3,6 +3,7 @@ package collection.util;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import bean.User;
 import com.fasterxml.jackson.core.*;
@@ -37,6 +38,19 @@ public class UtilsTest {
         list.add("Mark");
         Set<String> set = new HashSet<>(list);
         System.out.println(set);
+    }
+
+    /**
+     * 对象集合中取出某个字段的集合
+     */
+    @Test
+    public void SetExtraDemo() {
+        List<User> list = new ArrayList<>();
+        list.add(new User("Alex", 28));
+        list.add(new User("Beth", 14));
+        list.add(new User("Mark", 45));
+        Set<String> names = list.stream().map(User::getName).collect(Collectors.toSet());
+        System.out.println(names);
     }
 
     /**
