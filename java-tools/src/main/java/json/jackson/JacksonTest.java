@@ -2,6 +2,7 @@ package json.jackson;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +11,7 @@ import json.Teacher;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Date;
+import java.util.*;
 
 public class JacksonTest {
 
@@ -71,5 +72,21 @@ public class JacksonTest {
 
         Teacher teacher1 = objectMapper.treeToValue(node, Teacher.class);
         System.out.println(teacher1);
+    }
+
+    /**
+     * Map To Object
+     *
+     * @param args
+     * @throws JsonProcessingException
+     */
+    public static void main(String[] args) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, Object> map = new Hashtable<>();
+        map.put("id", "123");
+        map.put("name", "Mark");
+        String js = objectMapper.writeValueAsString(map);
+        User user = objectMapper.readValue(js, User.class);
+        System.out.println(user.toString());
     }
 }
