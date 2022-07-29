@@ -1,9 +1,11 @@
 package collection.util;
 
 import bean.User;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -56,5 +58,16 @@ public class StreamTest {
                 .distinct()
                 .collect(Collectors.toList());
         System.out.println(uniqueList);
+    }
+
+    /**
+     * List<String> to List<Integer>
+     */
+    @Test
+    public void ConvertDemo() {
+        String str = "1,2,3,4,5";
+        List<String> idList = Arrays.asList(StringUtils.split(str, ","));
+        List<Integer> ids = idList.stream().map(Integer::parseInt).collect(Collectors.toList());
+        System.out.println(ids);
     }
 }
