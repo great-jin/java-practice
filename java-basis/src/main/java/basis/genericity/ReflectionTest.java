@@ -1,4 +1,4 @@
-package basis.reflection;
+package basis.genericity;
 
 public class ReflectionTest {
 
