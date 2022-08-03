@@ -11,9 +11,9 @@
 
     <modules>
         <module>java-basis</module>
-        <module>spring-demo</module>
-        <module>thread-demo</module>
         <module>java-tools</module>
+        <module>spring-demo</module>
+        <module>thread-course</module>
     </modules>
 
     <properties>

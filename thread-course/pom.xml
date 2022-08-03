@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>thread-demo</artifactId>
+    <artifactId>thread-course</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>thread-maven</module>
